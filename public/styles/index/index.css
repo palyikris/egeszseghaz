@@ -1,0 +1,771 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+.topnavOpener {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 5vmin 0 0 5vmin;
+  background-color: #d8c2ad;
+  display: none;
+}
+
+.topnav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 8vmin;
+  position: absolute;
+  z-index: 10;
+}
+.topnav .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 5vmin 0 0 5vmin;
+}
+.topnav .title h3 {
+  font-size: 5vh;
+  font-weight: bold;
+}
+.topnav .options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.topnav .options button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 3vmin 5vmin;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.topnav .options button:hover {
+  cursor: pointer;
+}
+.topnav .options button:active {
+  outline: none;
+}
+.topnav .options button p {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+.topnav .options button span {
+  transition: all 0.5s;
+  background-color: black;
+  width: 0%;
+  height: 2px;
+  margin-top: 1vmin;
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .firstElement {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  padding: 0vmin 5vmin 0vmin 5vmin;
+}
+.mainContent .firstElement .text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border-radius: 8px;
+  position: relative;
+  height: 100vh;
+}
+.mainContent .firstElement .text img {
+  position: absolute;
+  z-index: 8;
+  top: auto;
+  bottom: auto;
+  left: 8vmin;
+  border-radius: 10px;
+  top: 20vmin;
+  width: 70vmin;
+}
+.mainContent .firstElement .text .content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 60%;
+  border-radius: 5px;
+}
+.mainContent .firstElement .text .content::after {
+  content: "";
+  padding: 70vmin 75vmin;
+  background-color: #d8c2ad;
+  position: absolute;
+  z-index: -1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+}
+.mainContent .firstElement .text .content h1 {
+  font-size: 5vh;
+  text-align: center;
+  margin-top: 20vmin;
+}
+.mainContent .firstElement .text .content p {
+  margin-top: 8vmin;
+  width: 60vmin;
+  margin-bottom: 10vmin;
+}
+.mainContent .firstElement .text .content span {
+  width: 60%;
+  background-color: #8e715b;
+  padding: 0.5px 0;
+  margin-top: 10vmin;
+}
+.mainContent .firstElement .text .content .phone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.mainContent .firstElement .text .content .phone p {
+  margin: 0;
+  margin-left: 3vmin;
+  width: auto;
+}
+.mainContent .firstElement .text .content .phone .fa-facebook {
+  margin-left: 15vmin;
+}
+.mainContent .firstElement .text .content .phone a {
+  margin-left: 3vmin;
+  color: black;
+}
+.mainContent .firstElement .text .content .phone #facebookLink {
+  max-width: 40vmin;
+  text-align: center;
+}
+.mainContent .secondTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-left: 10vmin;
+  padding-bottom: 6vmin;
+}
+.mainContent .secondElement {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.mainContent .secondElement .seconds {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 80%;
+}
+.mainContent .secondElement .seconds .second {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 3vmin 5vmin;
+  width: 150vmin;
+  margin: 3vmin 0;
+}
+.mainContent .secondElement .seconds .second h3 {
+  width: 70vmin;
+  font-size: 6vh;
+  padding-right: 3vmin;
+  text-align: center;
+  color: #8e715b;
+}
+.mainContent .secondElement .seconds .second .desc {
+  padding: 3vmin 10vmin;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-left: 1.2px solid #d8c2ad;
+}
+.mainContent .secondElement .seconds .second .desc a {
+  text-decoration: none;
+  color: black;
+  padding: 2vmin 5vmin;
+  border-radius: 5px;
+  background-color: #d8c2ad;
+  margin-top: 3vmin;
+  text-transform: uppercase;
+  text-align: center;
+}
+.mainContent .secondElement .triangleDiv {
+  background-color: #d8c2ad;
+  padding: 12vmin 2vmin 22vmin 2vmin;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  right: 0;
+  margin-top: 20vmin;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 80vmin;
+}
+.mainContent .secondElement .triangleDiv .text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.mainContent .secondElement .triangleDiv .text h3 {
+  text-align: center;
+}
+.mainContent .intersectionForAds {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 10vmin 0;
+  padding: 10vmin 5vmin;
+}
+.mainContent .intersectionForAds .content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 0 5vmin;
+}
+.mainContent .intersectionForAds .content img {
+  width: 60vmin;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+.mainContent .intersectionForAds .content img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.mainContent .intersectionForAds .content .text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 60%;
+  padding: 10vmin 5vmin 10vmin 10vmin;
+}
+.mainContent .intersectionForAds .content .text h1 {
+  margin-bottom: 8vmin;
+}
+.mainContent .intersectionForAds .content .text h3 {
+  margin: 4vmin 0;
+}
+.mainContent .intersectionForAds span {
+  max-width: 80%;
+  transition: all 0.5s;
+}
+.mainContent .intersectionForAds .imgsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.mainContent .intersectionForAds .imgsWrapper .imgs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.mainContent .intersectionForAds .imgsWrapper .imgs .img {
+  padding: 20vmin;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border-radius: 5px;
+  margin: 3vmin 0;
+  transition: all 0.4s;
+}
+.mainContent .intersectionForAds .imgsWrapper .imgs .img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.mainContent .thirdElement {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 15vmin 0;
+}
+.mainContent .thirdElement .images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .thirdElement .images .third {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 150vmin;
+  max-width: 90%;
+  margin: 12vmin 0;
+  padding: 5vmin 3vmin;
+}
+.mainContent .thirdElement .images .third p {
+  width: 50vmin;
+}
+.mainContent .thirdElement .images .third .img {
+  width: 60vmin;
+  height: 60vmin;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+.mainContent .thirdElement .images .third .img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.mainContent .thirdElement .images .third #img1 {
+  background: url("../../public/nyaritabor/Copy of camping flyer advertisement - Made with PosterMyWall(2).jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mainContent .thirdElement .images .third #img2 {
+  background: url("../../public/nyaritabor/Születésnapi_bulik_az_egészségházban_2022.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mainContent .thirdElement .images .third #img3 {
+  background: url("../../public/hazkepek/thirdonmainpage3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mainContent .thirdElement .images .third::after {
+  content: "";
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 40vmin 75vmin;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(6deg);
+}
+.mainContent footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: #d8c2ad;
+  margin-top: 10vmin;
+}
+.mainContent footer div {
+  width: 100%;
+}
+.mainContent footer .text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 10vmin 1vmin 10vmin 1vmin;
+}
+.mainContent footer .text a {
+  text-decoration: none;
+  color: black;
+  padding: 3vmin 1vmin;
+}
+.mainContent footer .separator {
+  margin: 6vmin 0;
+  width: 40%;
+  padding: 0.5px 0;
+  background-color: #8e715b;
+}
+.mainContent footer .triangle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #8e715b;
+  -webkit-clip-path: polygon(50% 100%, 100% 0, 0 0);
+          clip-path: polygon(50% 100%, 100% 0, 0 0);
+  padding: 5vmin 5vmin 10vmin 5vmin;
+  width: 70%;
+  margin: 0 10vmin;
+}
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(69, 69, 69, 0.8);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 5vmin;
+  height: 100vh;
+  top: 0;
+}
+.modal .zoomedImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.modal h4 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1vmin;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .topnavOpener {
+    display: inline-block;
+  }
+  .topnav {
+    display: none;
+    position: relative;
+    background-color: #d8c2ad;
+  }
+  .topnav .options {
+    flex-direction: column;
+  }
+  .topnav .title {
+    display: none;
+  }
+  .mainContent .firstElement .text {
+    flex-direction: column-reverse;
+  }
+  .mainContent .firstElement .text img {
+    width: 70vmin;
+    position: relative;
+    margin: auto;
+    margin-top: 12vmin;
+    left: 0;
+  }
+  .mainContent .firstElement .text .content {
+    max-width: 100%;
+    width: 100%;
+  }
+  .mainContent .firstElement .text .content::after {
+    padding: 80vmin 50vmin;
+  }
+  .mainContent .firstElement .text .content p {
+    width: 90%;
+    font-size: 2.5vh;
+    text-align: center;
+  }
+  .mainContent .firstElement .text .content .phone p {
+    margin-left: 5vmin;
+    width: auto;
+  }
+  .mainContent .secondTitle {
+    margin-top: 30vmin;
+  }
+  .mainContent .secondElement {
+    flex-direction: column;
+  }
+  .mainContent .secondElement .seconds {
+    width: 100%;
+  }
+  .mainContent .secondElement .seconds .second {
+    flex-direction: column;
+    width: 100%;
+  }
+  .mainContent .secondElement .seconds .second h3 {
+    background-color: #d8c2ad;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    font-size: 6vh;
+    padding: 4vmin 1vmin;
+  }
+  .mainContent .secondElement .seconds .second .desc {
+    border: 1px solid #d8c2ad;
+    border-radius: 0 0 10px 10px;
+  }
+  .mainContent .secondElement .seconds .second .desc p {
+    font-size: 2.5vh;
+  }
+  .mainContent .secondElement .seconds .second .desc a {
+    margin-top: 5vmin;
+    padding: 5vmin 3vmin;
+    font-size: 2.5vh;
+  }
+  .mainContent .secondElement .triangleDiv {
+    width: 90%;
+    margin-top: 10vmin;
+  }
+  .mainContent .thirdElement .images .third {
+    flex-direction: column;
+    margin-top: 40vmin;
+  }
+  .mainContent .thirdElement .images .third p {
+    text-align: center;
+    margin: 10vmin 0;
+  }
+  .mainContent .thirdElement .images .third::after {
+    content: "";
+    background-color: #d8c2ad;
+    border-radius: 10px;
+    padding: 60vmin 40vmin;
+    position: absolute;
+    z-index: -1;
+    transform: skewY(6deg);
+  }
+  .mainContent .thirdElement .images .third .img {
+    width: 50vmin;
+    height: 30vmin;
+  }
+  .mainContent footer {
+    flex-direction: column;
+    margin-top: 20vmin;
+  }
+  .mainContent footer .text,
+.mainContent footer .triangle {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .mainContent footer .text *,
+.mainContent footer .triangle * {
+    width: 100%;
+    text-align: center;
+  }
+  .mainContent footer .text .separator,
+.mainContent footer .triangle .separator {
+    width: 40%;
+  }
+  .mainContent footer .triangle {
+    padding: 15vmin 5vmin;
+    -webkit-clip-path: polygon(100% 50%, 50% 0%, 0% 50%, 50% 100%);
+            clip-path: polygon(100% 50%, 50% 0%, 0% 50%, 50% 100%);
+  }
+}
+.popupContainer {
+  position: fixed;
+  z-index: 30;
+  top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: none;
+}
+.popupContainer .popup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  background-color: #d8c2ad;
+  padding: 5vmin 0;
+  box-shadow: 0px 1px 11px 3px rgba(0, 0, 0, 0.75);
+  max-width: 60%;
+}
+.popupContainer .popup .icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.popupContainer .popup .icon img {
+  height: 40vmin;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+.popupContainer .popup .icon img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.popupContainer .popup .text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1vmin 2vmin 1vmin 2vmin;
+  font-size: 3vh;
+}
+.popupContainer .popup .text p {
+  width: 60%;
+  text-align: center;
+  padding: 1vmin 0;
+}
+.popupContainer .popup .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+.popupContainer .popup .buttons a,
+.popupContainer .popup .buttons button {
+  text-decoration: none;
+  border: none;
+  color: black;
+  padding: 2vmin 5vmin;
+  border-radius: 5px;
+  background-color: #8e715b;
+  font-size: 3vh;
+  outline: none;
+}
+.popupContainer .popup .buttons a:hover,
+.popupContainer .popup .buttons button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .popupContainer .popup .buttons {
+    flex-direction: column;
+  }
+  .popupContainer .popup .buttons button {
+    margin: 3vmin 0;
+  }
+  .popupContainer {
+    width: 100%;
+  }
+  .popupContainer .popup {
+    width: 80%;
+    max-width: 80%;
+  }
+  .popupContainer .popup .icon img {
+    width: 80%;
+  }
+  .popupContainer .popup .text p {
+    font-size: 2vh;
+  }
+  .mainContent .secondElement {
+    overflow: hidden;
+  }
+  .mainContent .intersectionForAds {
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
+  }
+  .mainContent .intersectionForAds .content {
+    flex-direction: column;
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
+  }
+  .mainContent .intersectionForAds .content img {
+    width: 100%;
+  }
+  .mainContent .intersectionForAds .content .text {
+    text-align: center;
+    width: 100%;
+  }
+  .mainContent .intersectionForAds .content .text h3 {
+    width: 100%;
+  }
+  .mainContent .thirdElement {
+    overflow-x: hidden;
+    height: auto;
+    padding: 0 0 30vmin 0;
+  }
+}/*# sourceMappingURL=index.css.map */

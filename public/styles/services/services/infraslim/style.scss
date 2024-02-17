@@ -1,0 +1,27 @@
+@import "../../serviceUnifrom/style"; 
+
+body{
+    @include  textBlock();
+    @include slideShow();
+}
+
+@media only screen and (max-width: 900px){
+    @include media();
+}
+.priceList table tr td{
+    width: auto;
+    padding: 2vmin 4vmin;
+    text-align: center;
+}
+.priceList table{
+    max-width: 95%;
+    word-wrap: break-word;
+}
+.priceList h1{
+    margin-bottom: 5vmin;
+    text-align: center;
+    padding-bottom: 5vmin;
+    border-bottom: 1px solid #d8c2ad;
+    width: 40%;
+    margin-top: 10vmin;
+}

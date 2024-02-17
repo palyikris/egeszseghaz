@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesterzsébet Egészségház</title>
+    <link
+      rel="stylesheet"
+      href="../../styles/services/services/talpkeztermgyogy/style.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="../../public/logo.png" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+  <body>
+    <div class="topnavOpener">
+      <i class="fa fa-navicon"></i>
+    </div>
+    <div class="topnav">
+      <div class="options">
+        <button onclick="toFirstPage()" id="topnavOption">
+          <p>Főoldal</p>
+          <span id="topnavSpan"></span>
+        </button>
+        <button id="topnavOption1" onclick="toSecondPage()">
+          <p>Rólunk</p>
+          <span id="topnavSpan1"></span>
+        </button>
+        <button id="topnavOption2" onclick="toThirdPage()">
+          <p>Szolgáltatásaink</p>
+          <span id="topnavSpan2" style="width: 100%"></span>
+        </button>
+        <button id="topnavOption3" onclick="toFourthPage()">
+          <p>Foglalás</p>
+          <span id="topnavSpan3"></span>
+        </button>
+        <button id="topnavOption4" onclick="toFifthPage()">
+          <p>Admin</p>
+          <span id="topnavSpan4"></span>
+        </button>
+      </div>
+    </div>
+    <div class="textBlock">
+      <div class="text">
+        <h1 id="userGreeter" style="display: none">Betöltés...</h1>
+        <h4 id="userGreeterDesc" style="display: none">Betöltés...</h4>
+        <i class="fa fa-angle-double-down" style="display: none"></i>
+        <h2 style="padding: 0 5vmin 5vmin 5vmin; text-align: center">
+          Üdvözöljük a Természetgyógyász, Kéz- Lábmasszázs oldalán
+        </h2>
+      </div>
+    </div>
+    <div class="connections">
+      <div class="data">
+        <i class="fa fa-phone"></i>
+        <div id="phone"></div>
+      </div>
+      <div class="data">
+        <i class="fa fa-envelope"></i>
+        <div id="email">csilla@uzenatestem.hu</div>
+      </div>
+      <div class="data">
+        <i class="fa fa-id-card"></i>
+        <a href="https://uzenatestem.hu" target="_blank" id="website"
+          >uzenatestem.hu</a
+        >
+      </div>
+    </div>
+    <div class="descForPage">
+      <div class="sep"></div>
+      <p id="" style="margin: 5vmin 0">
+        Kóródi Csilla vagyok, természetgyógyász – reflexológus, fülakupunktúrás
+        addiktológus. Természetgyógyászként fontosnak tartom, hogy megismerd
+        saját tested működését, hogy kialakíts vele egy élő kapcsolatot. Ezen a
+        kapcsolódáson keresztül megértheted testi tüneteid mondanivalóját,
+        valamint egészséged kibillent egyensúlyának visszaállítása is könnyebb
+        lesz. Segítek neked, hogy megtaláld azt az életmódot, ami számodra a
+        legmegfelelőbb, és támogatlak, hogy a kivitelezése is könnyed legyen.
+        Irányt mutatok, hogy melyik étrend lenne a legmegfelelőbb az egészséged
+        megőrzéséhez, vagy visszaállításához, mely étrend-kiegészítők támogatják
+        a leginkább testi jóllétedet, valamint mely tényezők járulhatnak még
+        hozzá testi egyensúlyod megtartásához.
+      </p>
+      <div class="sep"></div>
+    </div>
+    <div class="services">
+      <div class="titleWrapper"><h1>Kezelések:</h1></div>
+      <div class="dataWrapper">
+        <div class="data">
+          <div
+            class="dataImg"
+            style="
+              background-image: url('../../public/talpkezgyogy/szemelyes_konzultacio.jpg');
+            "
+          ></div>
+          <div class="dataDesc">
+            <h3>Konzultáció</h3>
+            <p>
+              A konzultáción átbeszéljük jelenlegi állapotodat, milyen tüneteid
+              vannak, milyen életmódot, étrendet folytatsz, mik a tüneteid,
+              milyen diagnózisod van, mik az eddigi vizsgálatok eredményei,
+              milyen kezelést kapsz/kaptál, milyen étrend-kiegészítőket,
+              anyagokat szedsz, hogyan viszonyulsz tüneteidhez, stb. Ezekből
+              kiindulva közösen meghatározzuk a célt és teszek javaslatot a
+              kezelési móddal kapcsolatban.
+            </p>
+          </div>
+        </div>
+        <div class="sep"></div>
+        <div class="data" id="reversedData">
+          <div class="dataDesc">
+            <h3>Talpmasszázs</h3>
+            <p>
+              A két talpon tükröződik az egész emberi test. A test bármely
+              részében fellépő fájdalom enyhíthető a talp megfelelő zónájában
+              található pontok masszírozásával. A talpon lévő pontok
+              masszírozása által növekszik a hozzá rendelt szerv
+              vérellátottsága, javul az anyagcsere és ezáltal beindul a
+              szervezet öngyógyító mechanizmusa. A talpmasszázs célja a
+              szervezet optimális működésének helyreállítása, az egészség
+              biztosítása, valamint a szervezet öngyógyításának beindítása.
+            </p>
+          </div>
+          <div
+            class="dataImg"
+            style="
+              background-image: url('../../public/talpkezgyogy/talpmasszázs\ fő.jpg');
+            "
+          ></div>
+        </div>
+        <div class="sep"></div>
+        <div class="data">
+          <div
+            class="dataImg"
+            style="
+              background-image: url('../../public/talpkezgyogy/kezmasszazs.jpg');
+            "
+          ></div>
+          <div class="dataDesc">
+            <h3>Kézmasszázs</h3>
+            <p>
+              A kézen ugyanúgy leképeződik a test, mint a lábon. Masszírozásával
+              csökkenthető a stressz, nyugodt, relaxált állapotba kerülhetsz,
+              csillapítható a fájdalom. Manapság a billentyűzet és a
+              telefonhasználat általi terhelés miatt, sok feszültség gyűlik
+              benne össze. Ennek feloldásához egy kiváló módszer a kéz
+              masszírozása.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slideContainer">
+      <div class="slideShow">
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/bemutatkozas_3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/Face_boritokep.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/kezmasszazs.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/szemelyes_konzultacio.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/szoba_1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/szoba_2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+        <div
+          class="img"
+          style="
+            background: url('../../public/talpkezgyogy/talpmasszázs\ fő.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+          "
+        ></div>
+      </div>
+      <div class="controls">
+        <div class="control" id="prev" onclick="prev()">
+          <i class="fa fa-angle-left"></i>
+        </div>
+        <div class="dots"></div>
+        <div class="control" id="next" onclick="next()">
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+    <div class="buttonContainer">
+      <a class="home" href="../../index.html"> Vissza a főoldalra </a>
+    </div>
+  </body>
+  <script src="../../scripts/loadImageForService/script.js"></script>
+  <script>
+    function upCase(str) {
+      str = str.charAt(0).toUpperCase() + str.slice(1);
+      return str;
+    }
+
+    let url_string = window.location;
+    let url = new URL(url_string);
+    let selected = url.searchParams.get("selected");
+
+    document.title = `Pesterzsébet Egészségház ${upCase(selected)}`;
+    document.getElementById(
+      "userGreeter"
+    ).innerHTML = `Üdvözöljük a <span>${upCase(selected)}</span> oldalán!`;
+    document.getElementById(
+      "userGreeterDesc"
+    ).innerHTML = `Itt mindent megtudhat a ${upCase(
+      selected
+    )} szolgáltatásunkról!`;
+
+    let topnavOption = document.querySelector("#topnavOption");
+
+    topnavOption.addEventListener("mouseover", () => {
+      document.getElementById("topnavSpan").style.width = "100%";
+    });
+    topnavOption.addEventListener("mouseout", () => {
+      document.getElementById("topnavSpan").style.width = "0%";
+    });
+
+    // ! --------------------------------------------------------------
+
+    let topnavOption1 = document.querySelector("#topnavOption1");
+
+    topnavOption1.addEventListener("mouseover", () => {
+      document.getElementById("topnavSpan1").style.width = "100%";
+    });
+    topnavOption1.addEventListener("mouseout", () => {
+      document.getElementById("topnavSpan1").style.width = "0%";
+    });
+
+    // ! ---------------------------------------------------------------
+
+    let topnavOption2 = document.querySelector("#topnavOption2");
+
+    topnavOption2.addEventListener("mouseover", () => {
+      document.getElementById("topnavSpan2").style.width = "100%";
+    });
+    topnavOption2.addEventListener("mouseout", () => {
+      document.getElementById("topnavSpan2").style.width = "0%";
+    });
+
+    // ! -------------------------------------------------------------
+
+    let topnavOption3 = document.querySelector("#topnavOption3");
+
+    topnavOption3.addEventListener("mouseover", () => {
+      document.getElementById("topnavSpan3").style.width = "100%";
+    });
+    topnavOption3.addEventListener("mouseout", () => {
+      document.getElementById("topnavSpan3").style.width = "0%";
+    });
+
+    // ! ------------------------------------------------------------
+
+    let topnavOption4 = document.querySelector("#topnavOption4");
+
+    topnavOption4.addEventListener("mouseover", () => {
+      document.getElementById("topnavSpan4").style.width = "100%";
+    });
+    topnavOption4.addEventListener("mouseout", () => {
+      document.getElementById("topnavSpan4").style.width = "0%";
+    });
+
+    function toSecondPage() {
+      window.location.href = "../wip.html";
+    }
+
+    // ! ------------------------------------------------------------------
+
+    function toThirdPage() {
+      window.location.href = "../services.html";
+    }
+
+    // ! -------------------------------------------------------------------------
+
+    function toFourthPage() {
+      window.location.href = "../newreservation.html";
+    }
+
+    // ! -------------------------------------------------------------------
+
+    function toFifthPage() {
+      window.location.href = "../login.html";
+    }
+
+    // ! -------------------------------------------------------------------
+
+    function toFirstPage() {
+      window.location.href = "../../index.html";
+    }
+
+    function loadIntro() {
+      let db = firebase.firestore();
+      let url_string = window.location;
+      let url = new URL(url_string);
+      let selected = url.searchParams.get("selected");
+
+      db.collection("newreservation")
+        .doc(selected)
+        .get()
+        .then((doc) => {
+          document.title = `Pesterzsébet Egészségház ${upCase(selected)}`;
+          document.getElementById(
+            "userGreeter"
+          ).innerHTML = `Üdvözöljük a <span>${upCase(
+            selected
+          )}</span> oldalán!`;
+          if (doc.id.toLowerCase() === doc.data().desc.toLowerCase()) {
+            document.getElementById("userGreeterDesc").innerHTML = "";
+            document.getElementById("desc").innerHTML = "";
+          } else {
+            document.getElementById(
+              "userGreeterDesc"
+            ).innerHTML = `Itt mindent megtudhat a ${upCase(
+              selected
+            )} szolgáltatásunkról!`;
+          }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let app = firebase.app();
+      let db = firebase.firestore();
+
+      let url_string = window.location;
+      let url = new URL(url_string);
+      let selected = url.searchParams.get("selected");
+
+      db.collection("newreservation")
+        .doc(selected)
+        .get()
+        .then((doc) => {
+          document.getElementById("phone").innerHTML = doc.data().phone;
+          document.getElementById("desc").innerHTML = doc.data().desc;
+        });
+
+      loadBackgroundImage();
+      loadIntro();
+    });
+
+    let navicon = document.querySelector(".topnavOpener i");
+
+    navicon.addEventListener("click", () => {
+      if (document.querySelector(".topnav").style.display == "none") {
+        document.querySelector(".topnav").style.marginTop = "8vmin";
+        document.querySelector(".topnav").style.display = "flex";
+      } else {
+        document.querySelector(".topnav").style.display = "none";
+      }
+    });
+
+    function loadBackgroundImage() {
+      let db = firebase.firestore();
+      let url_string = window.location;
+      let url = new URL(url_string);
+      let selected = url.searchParams.get("selected");
+
+      db.collection("newreservation")
+        .doc(selected)
+        .get()
+        .then((doc) => {
+          document.querySelector(
+            "body .textBlock"
+          ).style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${
+            doc.data().img
+          }")`;
+          document.querySelector("body .textBlock").style.backgroundSize =
+            "cover";
+          document.querySelector("body .textBlock").style.backgroundRepeat =
+            "no-repeat";
+          document.querySelector("body .textBlock").style.backgroundPosition =
+            "center";
+        });
+    }
+
+    function createImgDots() {
+      for (let i = 0; i < document.querySelectorAll(".img").length; i++) {
+        let dot = document.createElement("div");
+        dot.setAttribute("class", "dot");
+        dot.setAttribute("id", i);
+        dot.setAttribute("onclick", "setImageByDot(this.id)");
+        if (i === 0) {
+          dot.style.backgroundColor = "white";
+        }
+        document.querySelector(".dots").appendChild(dot);
+      }
+    }
+
+    createImgDots();
+
+    let i = 1;
+
+    function changeImg() {
+      let imgs = document.querySelectorAll(".img");
+      let dots = document.querySelectorAll(".dot");
+      if (i === imgs.length) {
+        i = 0;
+        imgs.forEach((img) => {
+          img.style.opacity = "0";
+        });
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "transparent";
+        });
+        imgs[i].style.opacity = "1";
+        dots[i].style.backgroundColor = "white";
+      } else {
+        imgs.forEach((img) => {
+          img.style.opacity = "0";
+        });
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "transparent";
+        });
+        imgs[i].style.opacity = "1";
+        dots[i].style.backgroundColor = "white";
+      }
+      i++;
+    }
+    let timer = setInterval(changeImg, 6000);
+
+    function prev() {
+      clearInterval(timer);
+      i--;
+      let imgs = document.querySelectorAll(".img");
+      let dots = document.querySelectorAll(".dot");
+      if (i < 0) {
+        i = imgs.length - 1;
+        imgs.forEach((img) => {
+          img.style.opacity = "0";
+        });
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "transparent";
+        });
+        imgs[i].style.opacity = "1";
+        dots[i].style.backgroundColor = "white";
+      } else {
+        imgs.forEach((img) => {
+          img.style.opacity = "0";
+        });
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "transparent";
+        });
+        imgs[i].style.opacity = "1";
+        dots[i].style.backgroundColor = "white";
+      }
+      timer = setInterval(changeImg, 6000);
+    }
+
+    function next() {
+      clearInterval(timer);
+      i++;
+      let imgs = document.querySelectorAll(".img");
+      let dots = document.querySelectorAll(".dot");
+      if (i === imgs.length) {
+        i = 0;
+        imgs.forEach((img) => {
+          img.style.opacity = "0";
+        });
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "transparent";
+        });
+        imgs[i].style.opacity = "1";
+        dots[i].style.backgroundColor = "white";
+      } else {
+        imgs.forEach((img) => {
+          img.style.opacity = "0";
+        });
+        dots.forEach((dot) => {
+          dot.style.backgroundColor = "transparent";
+        });
+        imgs[i].style.opacity = "1";
+        dots[i].style.backgroundColor = "white";
+      }
+      timer = setInterval(changeImg, 6000);
+    }
+
+    function setImageByDot(id) {
+      let imgs = document.querySelectorAll(".img");
+      let dots = document.querySelectorAll(".dot");
+      i = parseInt(id);
+      imgs.forEach((img) => {
+        img.style.opacity = "0";
+      });
+      dots.forEach((dot) => {
+        dot.style.backgroundColor = "transparent";
+      });
+      imgs[i].style.opacity = "1";
+      dots[i].style.backgroundColor = "white";
+      clearInterval(timer);
+      timer = setInterval(changeImg, 6000);
+    }
+  </script>
+</html>

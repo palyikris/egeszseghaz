@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+.textBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .topnavOpener {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 3vmin 5vmin;
+  background-color: #d8c2ad;
+  display: none;
+}
+body .topnav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 8vmin;
+  position: absolute;
+  z-index: 10;
+}
+body .topnav .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 5vmin 0 0 5vmin;
+}
+body .topnav .title h3 {
+  font-size: 5vh;
+  font-weight: bold;
+}
+body .topnav .options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+body .topnav .options button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 3vmin 5vmin;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+body .topnav .options button:hover {
+  cursor: pointer;
+}
+body .topnav .options button:active {
+  outline: none;
+}
+body .topnav .options button p {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+body .topnav .options button span {
+  transition: all 0.5s;
+  background-color: black;
+  width: 0%;
+  height: 2px;
+  margin-top: 1vmin;
+}
+
+.connections {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10vmin 5vmin;
+  margin: 5vmin 0;
+}
+.connections .data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 3vmin;
+}
+.connections .data i, .connections .data div {
+  max-width: 50%;
+  margin: 0 3vmin;
+}
+
+.descForPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 0vmin 20vmin;
+  margin-bottom: 10vmin;
+}
+.descForPage #desc {
+  padding: 5vmin 0;
+}
+.descForPage .sep {
+  width: 30%;
+  height: 1.2px;
+  background-color: #d8c2ad;
+}
+
+body .topnav .options button p {
+  color: white;
+}
+body .topnav .options button span {
+  background-color: white;
+}
+
+.priceList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0vmin 0 20vmin 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.priceList table {
+  width: auto;
+}
+.priceList table #title {
+  padding: 5vmin 3vmin;
+  text-align: center;
+  font-size: 5vh;
+  border-bottom: 1px solid #d8c2ad;
+  margin-bottom: 5vmin;
+}
+.priceList table tr td {
+  padding: 2vmin 0;
+  width: 50%;
+  text-align: center;
+}
+.priceList table tr .first {
+  padding-top: 5vmin;
+}
+
+@media only screen and (min-width: 800px) {
+  .priceList table {
+    max-width: 80%;
+  }
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 10vmin 0 10vmin 10vmin;
+}
+.buttonContainer a {
+  padding: 3vmin 6vmin;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  background-color: #d8c2ad;
+  box-shadow: 0px 0px 10px 0px rgba(24, 21, 20, 0.95);
+  text-decoration: none;
+  color: black;
+}
+
+body .textBlock {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  mix-blend-mode: darken;
+  justify-content: flex-end;
+  margin-bottom: 10vmin;
+}
+body .textBlock .text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-radius: 1000px 1000px 0 0;
+  background-color: #d8c2ad;
+  padding: 7vmin 20vmin 1vmin 20vmin;
+  width: auto;
+  min-width: 70%;
+  max-width: 80%;
+}
+body .textBlock .text h1 {
+  margin-bottom: 2vmin;
+  text-align: center;
+}
+body .textBlock .text i {
+  font-size: 8vh;
+  margin-top: 4vmin;
+}
+body .textBlock .text h4 {
+  text-align: center;
+}
+body .slideContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+}
+body .slideContainer .slideShow {
+  width: 150vmin;
+  position: relative;
+  height: 80vmin;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  max-width: 95%;
+}
+body .slideContainer .slideShow .img {
+  width: 150vmin;
+  height: 80vmin;
+  position: absolute;
+  opacity: 0;
+  transition: all 2s ease-in-out;
+}
+body .slideContainer .controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #d8c2ad;
+  border-radius: 0 0 10px 10px;
+  padding: 5vmin 0;
+  width: 150vmin;
+  max-width: 95%;
+}
+body .slideContainer .controls .dots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 80%;
+}
+body .slideContainer .controls .dots .dot {
+  border: 1px solid white;
+  padding: 1vmin;
+  background-color: transparent;
+  border-radius: 100%;
+  margin: 0 1vmin;
+  transition: all 2s ease-in-out;
+}
+body .slideContainer .controls .dots .dot:hover {
+  background-color: white;
+  cursor: pointer;
+}
+body .slideContainer .controls .control {
+  width: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  transition: all 0.6s;
+}
+body .slideContainer .controls .control i {
+  font-size: 5vh;
+  font-weight: bold;
+  color: white;
+}
+body .slideContainer .controls .control i:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  body .topnavOpener {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    color: white;
+    z-index: 10;
+    background-color: transparent;
+  }
+  body .topnav {
+    display: none;
+  }
+  body .topnav .options {
+    flex-direction: column;
+  }
+  body .topnav .title {
+    display: none;
+  }
+  body .textBlock .text {
+    padding: 7vmin 10vmin 1vmin 10vmin;
+  }
+  body .textBlock .text h1 {
+    font-size: 3vh;
+    max-width: 80%;
+    text-align: center;
+  }
+  body .textBlock .text h4 {
+    font-size: 2vh;
+    max-width: 90%;
+    text-align: center;
+  }
+  body .slideContainer .controls .control {
+    width: auto;
+  }
+  body .slideContainer .controls .dots {
+    width: auto;
+    margin: 0 8vmin;
+  }
+  body .connections .data {
+    width: 95%;
+  }
+  body .connections .data div {
+    max-width: 80%;
+  }
+}
+.priceList table tr td {
+  width: 30%;
+}/*# sourceMappingURL=style.css.map */

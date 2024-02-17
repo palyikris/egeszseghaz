@@ -1,0 +1,217 @@
+@import "../uniform/uniform";
+
+body {
+  .searchContainer {
+    @include centerDiv(column, nowrap);
+    width: auto;
+    align-items: flex-end;
+    margin-bottom: 6vmin;
+    padding-left: 70%;
+    input {
+      border: none;
+      outline: none;
+      border-radius: 50px;
+      padding: 2vmin;
+      width: 40vmin;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+      transition: all 0.6s;
+      text-transform: capitalize;
+      &::placeholder {
+        text-transform: none;
+      }
+      &:hover {
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+  @include topnav();
+  .topnav {
+    position: absolute;
+    margin-bottom: 10vmin;
+    z-index: 10;
+    .options {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.mainContainer {
+  @include centerDiv(column, nowrap);
+  padding-top: 20vmin;
+  margin-bottom: 20vmin;
+  span {
+    width: 60%;
+    background-color: #8e715b;
+    padding: 0.5px 0;
+    margin: 5vmin 0;
+  }
+  h3 {
+    margin: 5vmin 0 10vmin 0;
+  }
+  .searchBlocks {
+    @include centerDiv(row, wrap);
+    padding: 0vmin 10vmin;
+    .container {
+      @include centerDiv(column, nowrap);
+      padding-bottom: 10vmin;
+      h2 {
+        color: #8e715b;
+        margin-bottom: 3vmin;
+      }
+      .lds-hourglass {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-hourglass:after {
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 8px;
+        box-sizing: border-box;
+        border: 32px solid #8e715b;
+        border-color: #8e715b transparent #8e715b transparent;
+        animation: lds-hourglass 1.2s infinite;
+      }
+      @keyframes lds-hourglass {
+        0% {
+          transform: rotate(0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+          transform: rotate(900deg);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+          transform: rotate(1800deg);
+        }
+      }
+    }
+    .searches {
+      padding: 1.5vmin 3vmin;
+      background-color: #d8c2ad;
+      border-radius: 50px;
+      text-transform: capitalize;
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+      margin: 1vmin 2vmin;
+      transition: all 0.6s;
+      text-align: center;
+      display: none;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+      }
+    }
+  }
+  .chosenService {
+    @include centerDiv(row, nowrap);
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3vmin 30vmin;
+    margin: 10vmin 0;
+    display: none;
+    .bigText {
+      @include centerDiv(column, nowrap);
+      justify-content: flex-start;
+      padding: 10vmin 3vmin 20vmin 3vmin;
+      background-color: #d8c2ad;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+      width: 80%;
+      h2 {
+        text-align: center;
+        margin-bottom: 5vmin;
+      }
+      .separator {
+        padding: 0.5px 0;
+        width: 60%;
+        background-color: #8e715b;
+      }
+      div {
+        width: 60%;
+        margin-top: 5vmin;
+        text-align: center;
+      }
+    }
+    img {
+      width: 50vmin;
+      position: absolute;
+      margin: 5vmin 0 0 100vmin;
+      border-radius: 10px;
+    }
+  }
+  #prices {
+    padding-left: 0vmin;
+    flex-direction: column;
+    margin-top: 0;
+    justify-content: center;
+    h2 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5vmin;
+    }
+    p {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  body {
+    @include mobileTopnav();
+    .topnav,
+    .topnavOpener {
+      background-color: transparent;
+    }
+  }
+  .mainContainer {
+    h3 {
+      width: 90%;
+      text-align: center;
+    }
+    #chosenService {
+      flex-direction: column;
+      padding: 5vmin;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin: 0;
+        position: static;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+      }
+      .bigText {
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        padding: 5vmin 1vmin;
+        border-radius: 10px 10px 0 0;
+        h2 {
+          margin-bottom: 10vmin;
+        }
+        div {
+          margin-top: 10vmin;
+        }
+      }
+    }
+    #prices {
+      padding: 5vmin 6vmin;
+    }
+    .searchBlocks {
+      .searches {
+        padding: 3vmin 8vmin;
+      }
+    }
+    .searchContainer {
+      @include centerDiv(row, nowrap);
+      padding: 0;
+      margin: 10vmin 0;
+      input {
+        padding: 5vmin 8vmin;
+        margin: 0;
+        width: 90%;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../serviceUnifrom/style"; 
+
+body{
+    @include  textBlock();
+    @include slideShow();
+    @include timetable();
+}
+
+@media only screen and (max-width: 900px){
+    @include media();
+}
+.priceList table tr td{
+    width: 30%;
+} 

@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+.container h2 {
+  color: #8e715b;
+  margin-bottom: 3vmin;
+}
+.container .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.container .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #8e715b;
+  border-color: #8e715b transparent #8e715b transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite;
+}
+@-webkit-keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  display: none;
+}
+.mainContent .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 10vmin 0;
+}
+.mainContent .settings {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  padding: 3vmin 10vmin 3vmin 0;
+  margin-bottom: 10vmin;
+}
+.mainContent .settings a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+.mainContent .titleLeft {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-left: 10vmin;
+  margin: 10vmin 0;
+}
+.mainContent .titleLeft a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+.mainContent .reserves {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.mainContent .reserves .reserve {
+  background: url("../../public/fodrasz.jpg");
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  width: 50vmin;
+  height: 70vmin;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5vmin 5vmin;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+}
+.mainContent .reserves .reserve .data {
+  background-color: #d8c2ad;
+  padding: 5vmin 2vmin;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-radius: 0 0 10px 10px;
+}
+.mainContent .reserves .reserve .data .name {
+  padding-bottom: 3vmin;
+  border-bottom: 1px solid #8e715b;
+}
+.mainContent .reserves .reserve .data .type {
+  margin-top: 3vmin;
+}
+.mainContent .reserves .reserve .data div p {
+  text-align: center;
+}
+.mainContent .reservationPanel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 90%;
+  background-color: #d8c2ad;
+  justify-content: space-evenly;
+  padding: 15vmin 10vmin;
+  margin: 10vmin 0;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+.mainContent .reservationPanel .panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10%;
+  width: 30vmin;
+  height: 30vmin;
+  border-radius: 10px;
+  background-color: #8e715b;
+  margin: 3vmin;
+}
+.mainContent .reservationPanel .panel .del {
+  margin-top: 3vmin;
+  border: 1px solid black;
+  border-radius: 100%;
+  padding: 1.5vmin 2vmin;
+  font-size: 3vh;
+  transition: all 0.6s;
+}
+.mainContent .reservationPanel .panel .del:hover {
+  background-color: black;
+  color: #8e715b;
+  cursor: pointer;
+}
+.mainContent .reservationPanel .addNewType {
+  background-color: #8e715b;
+  font-weight: bold;
+  font-size: 3vh;
+  border-radius: 5px;
+  padding: 3vmin 8vmin;
+  margin-top: 5vmin;
+  border: none;
+  outline: none;
+}
+.mainContent .reservationPanel .addNewType:hover {
+  cursor: pointer;
+}
+.mainContent .newTypeAdder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #d8c2ad;
+  border-radius: 5px;
+  padding: 10vmin;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+  margin: 10vmin 0;
+  width: auto;
+  max-width: 90%;
+}
+.mainContent .newTypeAdder .data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 4vmin 0;
+}
+.mainContent .newTypeAdder .data label {
+  font-size: 2.5vh;
+}
+.mainContent .newTypeAdder .data input {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 2vmin 1vmin;
+  margin-left: 3vmin;
+}
+.mainContent .newTypeAdder button {
+  border: none;
+  background-color: #8e715b;
+  padding: 3vmin 8vmin;
+  border-radius: 8px;
+  outline: none;
+}
+.mainContent .newTypeAdder button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .mainContent .reserves .reserve .data div p {
+    font-size: 2vh;
+  }
+  .mainContent .reservationPanel {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */

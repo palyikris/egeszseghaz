@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesterzsébet Egészségház</title>
+    <link rel="stylesheet" href="../../styles/services/services/szolarium/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../../public/logo.png">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+
+<body>
+    <div class="topnavOpener">
+        <i class="fa fa-navicon"></i>
+    </div>
+    <div class="topnav">
+        <div class="options">
+            <button onclick="toFirstPage()" id="topnavOption">
+                <p>Főoldal</p>
+                <span id="topnavSpan"></span>
+            </button>
+            <button id="topnavOption1" onclick="toSecondPage()">
+                <p>Rólunk</p>
+                <span id="topnavSpan1"></span>
+            </button>
+            <button id="topnavOption2" onclick="toThirdPage()">
+                <p>Szolgáltatásaink</p>
+                <span id="topnavSpan2" style="width: 100%"></span>
+            </button>
+            <button id="topnavOption3" onclick="toFourthPage()">
+                <p>Foglalás</p>
+                <span id="topnavSpan3"></span>
+            </button>
+            <button id="topnavOption4" onclick="toFifthPage()">
+                <p>Admin</p>
+                <span id="topnavSpan4"></span>
+            </button>
+        </div>
+    </div>
+    <div class="textBlock" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://firebasestorage.googleapis.com/v0/b/egeszseghazpesterzsebet.appspot.com/o/pilates%2Bintimtorna%2Fpilates%2Bintimtorna.jpg?alt=media&token=dd01464a-5e36-42c9-af5b-b932c8600d25); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div class="text">
+            <h1 id="userGreeter">Betöltés...</h1>
+            <h4 id="userGreeterDesc">Betöltés...</h4>
+            <i class="fa fa-angle-double-down"></i>
+        </div>
+    </div>
+    <div class="connections">
+        <div class="data">
+            <i class="fa fa-phone"></i>
+            <div id="phone">06-30-478-3285</div>
+            <i class="fa fa-phone"></i>
+            <div id="phone1">06-30-573-2212</div>
+
+        </div>
+    </div>
+    <h1 style="text-align: center; padding: 3vmin 0;">Szeretettel üdvözlök mindenkit!</h1>
+    <div class="descForPage">
+        <div class="sep"></div>
+        <p id="desc">
+            Petróczy Gabriella vagyok, csoportos fitness edző, aqua-fitness instruktor, masszőr és pilates+intim torna tréner. Az
+            élet úgy hozta, hogy a munkám és a hobbim mellett sok emberrel foglalkozhatok és segíthetek mindenkinek megtalálni a
+            testi-lelki harmóniáját.
+        </p>
+        <div class="sep"></div>
+    </div>
+    <div class="descForPage">
+        <h3 style="margin-bottom: 2vmin;">Most a Pilates+Intim tornát szeretném Veletek megismertetni pár sorban.</h3>
+        <p>
+            Ez egy új komplex talajon végzett mozgásforma, ami az egészségmegőrzést szolgálja. Mozgásszervi, nőgyógyászati,
+            urológiai és pszichés problémák esetén kimondottan ajánlott korra való tekintet nélkül.
+        </p>
+        <div class="sep" style="margin: 3vmin;"></div>
+        <p>
+            <b>
+                PILATES: fő célja a test és lélek egységének meg… koncentrált mozgás által. Minden egyes edzés alkalmával az egész
+                testet átmozgató mozgásforma, ami erősíti a törzs izmait, kíméli az ízületeket, oldja a mindennapi stresszt.
+            </b>
+        </p>
+        <h4 style="text-align: left; margin-top: 2vmin; margin-bottom: 1vmin;">Pilátesz hatásai:</h4>
+        <ul>
+            <li>
+                serkenti a keringést és a nyirokrendszer működését
+            </li>
+            <li>
+                fejleszti a koncentrációt, egyensúlyérzéket
+            </li>
+            <li>
+                javítja a közérzetet, testtartást és az állóképességet
+            </li>
+            <li>
+                mozgékonyabbá teszi a gereicet, váll- és csípőízületeket
+            </li>
+            <li>
+                stresszoldó hatású
+            </li>
+        </ul>
+        <div class="sep" style="margin: 3vmin;"></div>
+        <p>
+            <b>
+                INTIMTORNA: a medencealapi izmokkal és gátizommal végzett mozgásforma az alhasi szervek védelmében.
+            </b>
+        </p>
+        <h4 style="text-align: left; margin-top: 2vmin; margin-bottom: 1vmin;">Intimtorna hatásai:</h4>
+        <ul>
+            <li>
+                erősíti a méhet
+            </li>
+            <li>
+                véd a méh, hólyag és végbél süllyedéstől
+            </li>
+            <li>
+                menstruációs fájdalmakat csökkenti
+            </li>
+            <li>
+                anyagcsere panaszok csökkentése
+            </li>
+            <li>
+                vizelet visszatartási és széklettartási problémákat javítja
+            </li>
+            <li>
+                szülés utáni regenerálódás
+            </li>
+        </ul>
+        <div class="sep" style="margin: 3vmin;"></div>
+        <p>A két mozgásforma egymást kiegészítve és a megfelelő légzéstechnika alkalmazásával kimondottan jótékony hatást gyakorol
+        az egész testünkre.</p>
+        <p>
+            Életünk olyan amilyennek teremtjük.
+        </p>
+        <p>
+            <b>
+                Tegyünk valami jót a testünkkel, hogy a lelkünk szívesen lakjon benne!
+            </b>
+        </p>
+        <p>
+            Szeretettel várom érdeklődéseteket! Legyen szép napotok!
+        </p>
+    </div>
+    <div class="priceList">
+        <table>
+            <tr>
+                <td>Hétfőnként:</td>
+                <td>17:45-18:45-ig</td>
+            </tr>
+            <tr>
+                <td>Szerdánként:</td>
+                <td>19:00-20:00-ig</td>
+            </tr>
+            <tr>
+                <td>Péntekenként:</td>
+                <td>17:45-18:45-ig</td>
+            </tr>
+        </table>
+    </div>
+    <div class="priceList">
+        <table>
+            
+        </table>
+    </div>
+    <div class="slideContainer">
+        <div class="slideShow">
+            <div class="img"
+                style="background: url('../../public/pilint/pilim.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; opacity: 1">
+            </div>
+        </div>
+        <div class="controls">
+            <div class="control" id="prev" onclick="prev()">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="dots"></div>
+            <div class="control" id="next" onclick="next()">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="buttonContainer">
+        <a class="home" href="../../index.html">
+            Vissza a főoldalra
+        </a>
+    </div>
+</body>
+<script src="../../scripts/loadImageForService/script.js"></script>
+<script>
+    function upCase(str) {
+        str = str.charAt(0).toUpperCase() + str.slice(1);
+        return str
+    }
+
+
+    let url_string = window.location;
+    let url = new URL(url_string);
+    let selected = url.searchParams.get("selected")
+
+    document.title = `Pesterzsébet Egészségház ${upCase(selected)}`;
+    document.getElementById("userGreeter").innerHTML = `Üdvözöljük a <span>${upCase(selected)}</span> oldalán!`
+    document.getElementById("userGreeterDesc").innerHTML = `Itt mindent megtudhat a ${upCase(selected)} szolgáltatásunkról!`
+
+
+    let topnavOption = document.querySelector("#topnavOption")
+
+    topnavOption.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan").style.width = "100%"
+    })
+    topnavOption.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan").style.width = "0%"
+    })
+
+    // ! --------------------------------------------------------------
+
+    let topnavOption1 = document.querySelector("#topnavOption1")
+
+    topnavOption1.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan1").style.width = "100%"
+    })
+    topnavOption1.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan1").style.width = "0%"
+    })
+
+    // ! ---------------------------------------------------------------
+
+    let topnavOption2 = document.querySelector("#topnavOption2")
+
+    topnavOption2.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan2").style.width = "100%"
+    })
+    topnavOption2.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan2").style.width = "0%"
+    })
+
+    // ! -------------------------------------------------------------
+
+    let topnavOption3 = document.querySelector("#topnavOption3")
+
+    topnavOption3.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan3").style.width = "100%"
+    })
+    topnavOption3.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan3").style.width = "0%"
+    })
+
+    // ! ------------------------------------------------------------
+
+    let topnavOption4 = document.querySelector("#topnavOption4")
+
+    topnavOption4.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan4").style.width = "100%"
+    })
+    topnavOption4.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan4").style.width = "0%"
+    })
+
+
+
+
+    function toSecondPage() {
+        window.location.href = "../wip.html"
+    }
+
+    // ! ------------------------------------------------------------------
+
+    function toThirdPage() {
+        window.location.href = "../services.html"
+    }
+
+    // ! -------------------------------------------------------------------------
+
+    function toFourthPage() {
+        window.location.href = "../newreservation.html"
+    }
+
+    // ! -------------------------------------------------------------------
+
+    function toFifthPage() {
+        window.location.href = "../login.html"
+    }
+
+    // ! -------------------------------------------------------------------
+
+    function toFirstPage() {
+        window.location.href = "../../index.html"
+    }
+
+    function loadIntro() {
+        let db = firebase.firestore();
+        let url_string = window.location;
+        let url = new URL(url_string);
+        let selected = url.searchParams.get("selected")
+
+        db.collection("newreservation").doc(selected).get().then(doc => {
+            console.log(doc);
+            document.title = `Pesterzsébet Egészségház ${upCase(selected)}`;
+            document.getElementById("userGreeter").innerHTML = `Üdvözöljük a <span>${upCase(selected)}</span> oldalán!`
+            if (doc.id.toLowerCase() === doc.data().desc.toLowerCase()) {
+                document.getElementById("userGreeterDesc").innerHTML = ""
+                document.getElementById("desc").innerHTML = ""
+            }
+            else {
+                document.getElementById("userGreeterDesc").innerHTML = `Itt mindent megtudhat a ${upCase(selected)} szolgáltatásunkról!`
+            }
+        })
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        let app = firebase.app();
+        let db = firebase.firestore();
+
+        let url_string = window.location;
+        let url = new URL(url_string);
+        let selected = url.searchParams.get("selected")
+
+
+        db.collection("newreservation").doc(selected).get().then(doc => {
+            document.getElementById("phone").innerHTML = doc.data().phone;
+            document.getElementById("desc").innerHTML = doc.data().desc;
+        })
+
+        loadBackgroundImage()
+        loadIntro()
+    })
+
+
+    let navicon = document.querySelector(".topnavOpener i");
+
+    navicon.addEventListener("click", () => {
+        if (document.querySelector(".topnav").style.display == "none") {
+            document.querySelector(".topnav").style.marginTop = "8vmin"
+            document.querySelector(".topnav").style.display = "flex"
+        }
+        else {
+            document.querySelector(".topnav").style.display = "none"
+        }
+    })
+
+    function loadBackgroundImage() {
+
+        let db = firebase.firestore();
+        let url_string = window.location;
+        let url = new URL(url_string);
+        let selected = url.searchParams.get("selected")
+
+
+        db.collection("newreservation").doc(selected).get().then(doc => {
+            document.querySelector("body .textBlock").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${doc.data().img}")`
+            document.querySelector("body .textBlock").style.backgroundSize = "cover"
+            document.querySelector("body .textBlock").style.backgroundRepeat = "no-repeat"
+            document.querySelector("body .textBlock").style.backgroundPosition = "center"
+        })
+    }
+
+
+    function createImgDots() {
+        for (let i = 0; i < document.querySelectorAll(".img").length; i++) {
+            let dot = document.createElement("div")
+            dot.setAttribute("class", "dot")
+            dot.setAttribute("id", i)
+            dot.setAttribute("onclick", "setImageByDot(this.id)")
+            if (i === 0) {
+                dot.style.backgroundColor = "white"
+            }
+            document.querySelector(".dots").appendChild(dot)
+        }
+    }
+
+    createImgDots()
+
+
+
+    let i = 1
+
+    function changeImg() {
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        if (i === imgs.length) {
+            i = 0;
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        else {
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        i++
+    }
+    let timer = setInterval(changeImg, 6000)
+
+    function prev() {
+        clearInterval(timer)
+        i--
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        if (i < 0) {
+            i = imgs.length - 1;
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        else {
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        timer = setInterval(changeImg, 6000)
+    }
+
+    function next() {
+        clearInterval(timer)
+        i++
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        if (i === imgs.length) {
+            i = 0;
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        else {
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        timer = setInterval(changeImg, 6000)
+    }
+
+    function setImageByDot(id) {
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        i = parseInt(id)
+        imgs.forEach(img => {
+            img.style.opacity = "0"
+        })
+        dots.forEach(dot => {
+            dot.style.backgroundColor = "transparent"
+        })
+        imgs[i].style.opacity = "1"
+        dots[i].style.backgroundColor = "white"
+        clearInterval(timer)
+        timer = setInterval(changeImg, 6000)
+    }
+</script>
+
+</html>

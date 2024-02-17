@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+body .searchContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  align-items: flex-end;
+  margin-bottom: 6vmin;
+  padding-left: 70%;
+}
+body .searchContainer input {
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  padding: 2vmin;
+  width: 40vmin;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  transition: all 0.6s;
+  text-transform: capitalize;
+}
+body .searchContainer input::-moz-placeholder {
+  text-transform: none;
+}
+body .searchContainer input:-ms-input-placeholder {
+  text-transform: none;
+}
+body .searchContainer input::placeholder {
+  text-transform: none;
+}
+body .searchContainer input:hover {
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+}
+body .topnavOpener {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 3vmin 5vmin;
+  background-color: #d8c2ad;
+  display: none;
+}
+body .topnav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 8vmin;
+  position: absolute;
+  z-index: 10;
+}
+body .topnav .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 5vmin 0 0 5vmin;
+}
+body .topnav .title h3 {
+  font-size: 5vh;
+  font-weight: bold;
+}
+body .topnav .options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+body .topnav .options button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 3vmin 5vmin;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+body .topnav .options button:hover {
+  cursor: pointer;
+}
+body .topnav .options button:active {
+  outline: none;
+}
+body .topnav .options button p {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+body .topnav .options button span {
+  transition: all 0.5s;
+  background-color: black;
+  width: 0%;
+  height: 2px;
+  margin-top: 1vmin;
+}
+body .topnav {
+  position: absolute;
+  margin-bottom: 10vmin;
+  z-index: 10;
+}
+body .topnav .options {
+  justify-content: flex-start;
+}
+
+.mainContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-top: 20vmin;
+  margin-bottom: 20vmin;
+}
+.mainContainer span {
+  width: 60%;
+  background-color: #8e715b;
+  padding: 0.5px 0;
+  margin: 5vmin 0;
+}
+.mainContainer h3 {
+  margin: 5vmin 0 10vmin 0;
+}
+.mainContainer .searchBlocks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0vmin 10vmin;
+}
+.mainContainer .searchBlocks .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-bottom: 10vmin;
+}
+.mainContainer .searchBlocks .container h2 {
+  color: #8e715b;
+  margin-bottom: 3vmin;
+}
+.mainContainer .searchBlocks .container .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.mainContainer .searchBlocks .container .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #8e715b;
+  border-color: #8e715b transparent #8e715b transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite;
+}
+@-webkit-keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+.mainContainer .searchBlocks .searches {
+  padding: 1.5vmin 3vmin;
+  background-color: #d8c2ad;
+  border-radius: 50px;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  margin: 1vmin 2vmin;
+  transition: all 0.6s;
+  text-align: center;
+  display: none;
+}
+.mainContainer .searchBlocks .searches:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+}
+.mainContainer .chosenService {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3vmin 30vmin;
+  margin: 10vmin 0;
+  display: none;
+}
+.mainContainer .chosenService .bigText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 10vmin 3vmin 20vmin 3vmin;
+  background-color: #d8c2ad;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  width: 80%;
+}
+.mainContainer .chosenService .bigText h2 {
+  text-align: center;
+  margin-bottom: 5vmin;
+}
+.mainContainer .chosenService .bigText .separator {
+  padding: 0.5px 0;
+  width: 60%;
+  background-color: #8e715b;
+}
+.mainContainer .chosenService .bigText div {
+  width: 60%;
+  margin-top: 5vmin;
+  text-align: center;
+}
+.mainContainer .chosenService img {
+  width: 50vmin;
+  position: absolute;
+  margin: 5vmin 0 0 100vmin;
+  border-radius: 10px;
+}
+.mainContainer #prices {
+  padding-left: 0vmin;
+  flex-direction: column;
+  margin-top: 0;
+  justify-content: center;
+}
+.mainContainer #prices h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5vmin;
+}
+.mainContainer #prices p {
+  text-align: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  body .topnavOpener {
+    display: inline-block;
+    background-color: transparent;
+  }
+  body .topnav {
+    display: none;
+    position: relative;
+    background-color: transparent;
+  }
+  body .topnav .options {
+    flex-direction: column;
+  }
+  body .topnav .title {
+    display: none;
+  }
+  body .topnav,
+body .topnavOpener {
+    background-color: transparent;
+  }
+  .mainContainer h3 {
+    width: 90%;
+    text-align: center;
+  }
+  .mainContainer #chosenService {
+    flex-direction: column;
+    padding: 5vmin;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainContainer #chosenService img {
+    margin: 0;
+    position: static;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+  .mainContainer #chosenService .bigText {
+    width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    padding: 5vmin 1vmin;
+    border-radius: 10px 10px 0 0;
+  }
+  .mainContainer #chosenService .bigText h2 {
+    margin-bottom: 10vmin;
+  }
+  .mainContainer #chosenService .bigText div {
+    margin-top: 10vmin;
+  }
+  .mainContainer #prices {
+    padding: 5vmin 6vmin;
+  }
+  .mainContainer .searchBlocks .searches {
+    padding: 3vmin 8vmin;
+  }
+  .mainContainer .searchContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 10vmin 0;
+  }
+  .mainContainer .searchContainer input {
+    padding: 5vmin 8vmin;
+    margin: 0;
+    width: 90%;
+  }
+}/*# sourceMappingURL=style.css.map */

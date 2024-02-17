@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: http://www.erzsebetiegeszseghaz.com/credentials/sitemap.txt

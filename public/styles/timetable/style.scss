@@ -1,0 +1,139 @@
+@import "../uniform/uniform";
+
+.mainContent {
+    @include centerDiv(column, nowrap);
+    .form {
+        @include centerDiv(column, nowrap);
+        .data, #exceptionHolder{
+            @include centerDiv(column, nowrap);
+            background-color: #d8c2ad;
+            max-width: 90%;
+            width: auto;
+            padding: 15vmin 30vmin;
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+            border-radius: 10px;
+            margin: 10vmin 0;
+            .weekdays{
+                @include centerDiv(column, nowrap);
+                margin-top: 8vmin;
+                .weekday{
+                    @include centerDiv(row, wrap);
+                    justify-content: space-evenly;
+                    margin: 1.5vmin 0;
+                    input{
+                        border: none;
+                        border-radius: 3px;
+                        outline: none;
+                        margin: 0;
+                    }
+                }
+            }
+            select{
+                padding: 2vmin 3vmin;
+                border-radius: 6px;
+                background: white;
+                color:#888;
+                border: none;
+                outline: none;
+                display: inline-block;
+                appearance:none;
+                cursor:pointer;
+                display: none;
+            }
+            .lds-hourglass {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
+                text-align: center;
+              }
+              .lds-hourglass:after {
+                content: " ";
+                display: block;
+                border-radius: 50%;
+                width: 0;
+                height: 0;
+                margin: 8px;
+                box-sizing: border-box;
+                border: 32px solid #8e715b;
+                border-color: #8e715b transparent #8e715b transparent;
+                animation: lds-hourglass 1.2s infinite;
+              }
+              @keyframes lds-hourglass {
+                0% {
+                  transform: rotate(0);
+                  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                }
+                50% {
+                  transform: rotate(900deg);
+                  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                }
+                100% {
+                  transform: rotate(1800deg);
+                }
+              }
+            h5{
+                text-align: center;
+            }
+            input[type="text"]{
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                padding: 2vmin 1vmin;
+                margin-left: 3vmin;
+            }
+            input[type="checkbox"]{
+                border: none;
+                border-radius: 3px;
+                outline: none;
+            }
+            .exceptions{
+                @include centerDiv(column, nowrap);
+                margin-top: 5vmin;
+                padding: 5vmin 10vmin;
+                width: auto;
+                max-width: 90%;
+                border: 2px solid #8e715b;
+                .day, .hour{
+                    @include centerDiv(row, wrap);
+                    margin: 2vmin 0;
+                    label{
+                        font-size: 2vh;
+                        text-align: center;
+                        margin-bottom: 1vmin;
+                    }
+                    input[type="text"]{
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        padding: 2vmin 1vmin;
+                        margin-left: 3vmin;
+                    }
+                    input[type="time"]{
+                        margin: 0 1vmin;
+                    }
+                }
+                .addNewExceptions{
+                    background-color: #8e715b;
+                    font-weight: bold;
+                    font-size: 2vh;
+                    border-radius: 5px;
+                    padding: 1.5vmin 6vmin;
+                    margin-top: 5vmin;
+                }
+            }
+        }
+        button{
+            background-color: #d8c2ad;
+            border: none;
+            border-radius: 5px;
+            padding:  2vmin 6vmin;
+            text-align: center;
+            text-transform: uppercase;
+            outline: none;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

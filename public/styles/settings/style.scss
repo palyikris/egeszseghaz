@@ -1,0 +1,298 @@
+@import "../uniform/uniform";
+
+
+.container{
+    @include centerDiv(column, nowrap);
+    height: 100vh;
+    h2{
+        color: #8e715b;
+        margin-bottom: 3vmin;
+    }
+    .lds-hourglass {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-hourglass:after {
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 8px;
+        box-sizing: border-box;
+        border: 32px solid #8e715b;
+        border-color: #8e715b transparent #8e715b transparent;
+        animation: lds-hourglass 1.2s infinite;
+      }
+      @keyframes lds-hourglass {
+        0% {
+          transform: rotate(0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+          transform: rotate(900deg);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+          transform: rotate(1800deg);
+        }
+      }
+      
+}
+
+.mainContent{
+    @include centerDiv(column, nowrap);
+    display: none;
+    padding-bottom: 10vmin;
+    .titleLeft{
+        @include centerDiv(row, nowrap);
+        justify-content: flex-start;
+        padding-left: 10vmin;
+        margin: 10vmin 0;
+        a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .adjustBgPic{
+        @include centerDiv(column, nowrap);
+        .title{
+            @include centerDiv(row, nowrap);
+            margin-top: 20vmin;
+            h1{
+                font-size: 6vh;
+                text-align: center;
+            }
+        }
+        .currentPics{
+            margin-top: 20vmin;
+            @include centerDiv(row, wrap);
+            width: 90%;
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 5vmin 3vmin;
+            justify-content: space-evenly;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            max-width: 90%;
+            .container{
+                @include centerDiv(column, nowrap);
+                width: auto;
+                margin: 5vmin 0;
+                height: auto;
+                .currentPic{
+                    margin-bottom: 3vmin;
+                }
+            }
+        }
+        .help{
+            margin: 10vmin 0 0 0;
+            padding: 5vmin;
+            border: 3px solid red;
+            @include centerDiv(column, nowrap);
+            width: auto;
+            max-width: 60%;
+            h3{
+                margin: 3vmin 0 5vmin 0;
+                text-align: center;
+                font-size: 5vh;
+            }
+            p{
+                text-align: center;
+            }
+        }
+        .changePics{
+            margin: 20vmin 0;
+            @include centerDiv(column, nowrap);
+            width: auto;
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 5vmin;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            max-width: 90%;
+            .adjuster{
+                @include centerDiv(row, wrap);
+                padding: 3vmin;
+                input{
+                    margin-left: 5vmin;
+                }
+                label{
+                    font-size: 2vh;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .adjustTexts{
+        @include centerDiv(column, nowrap);
+        .title{
+            @include centerDiv(row, nowrap);
+            margin-top: 20vmin;
+            h1{
+                font-size: 6vh;
+                text-align: center;
+            }
+        }
+        .currentTexts{
+            margin-top: 20vmin;
+            @include centerDiv(row, wrap);
+            width: 90%;
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 5vmin 3vmin;
+            justify-content: space-evenly;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            max-width: 60%;
+            max-height: 20%;
+            .container{
+                @include centerDiv(column, wrap);
+                width: auto;
+                max-width: 25%;
+                margin-top: 5vmin;
+                height: auto;
+                padding: 5vmin 0;
+                .currentName{
+                    margin-bottom: 1vmin;
+                }
+                .currentName, .currentText{
+                    text-align: center;
+                }
+            }
+        }
+        .changeTexts{
+            margin: 20vmin 0;
+            @include centerDiv(column, nowrap);
+            width: auto;
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 5vmin;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            max-width: 90%;
+            .adjuster{
+                @include centerDiv(column, nowrap);
+                padding: 3vmin;
+                div{
+                    @include centerDiv(row, nowrap);
+                    margin: 1vmin 0;
+                    input{
+                        margin-left: 5vmin;
+                        outline: none;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 1vmin 2vmin;
+                    }
+                    label{
+                        text-align: center;
+                    }
+                }
+            }
+            .buttonContainer{
+                @include centerDiv(row, nowrap);
+                button{
+                    border: none;
+                    border-radius: 8px;
+                    padding: 1.5vmin 5vmin;
+                    background-color:#8e715b;
+                    outline: none;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .adjustPhone{
+        @include centerDiv(column, nowrap);
+        .currentPhones{
+            margin: 20vmin 0 8vmin 0;
+            @include centerDiv(row, wrap);
+            width: auto;
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 5vmin;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            max-width: 90%;
+            .container{
+                height: auto;
+                padding: 8vmin 0;
+                max-width: 50vmin;
+            }
+        }
+        .changePhones{
+            @include centerDiv(column, nowrap);
+            width: auto;
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 5vmin;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            max-width: 90%;
+            .adjuster{
+                @include centerDiv(row, wrap);
+                width: auto;
+                max-width: 90%;
+                padding: 10vmin 5vmin;
+            }
+            input{
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                padding: 1vmin 2vmin;
+                margin-top: 1vmin;
+                margin-left: 1vmin;
+            }
+            label{
+                text-align: center;
+            }
+            .buttonContainer{
+                @include centerDiv(row, nowrap);
+                button{
+                    border: none;
+                    border-radius: 8px;
+                    padding: 2vmin 8vmin;
+                    background-color:#8e715b;
+                    outline: none;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .mainContent .adjustTexts .currentTexts{
+        flex-direction: column;
+    }
+
+    .mainContent .adjustTexts .currentTexts .container{
+        max-width: 90%;
+        margin: 5vmin 0;
+        max-height: 50vmin;
+    }
+    .mainContent .adjustBgPic .currentPics{
+        flex-direction: column;
+    }
+    .mainContent .adjustBgPic .currentPics .container {
+        max-height: 50vmin;
+    }
+    .mainContent .adjustTexts .changeTexts .adjuster div label{
+        text-align: center;
+        margin-bottom: 1.5vmin;
+    }
+
+    .mainContent .adjustTexts .changeTexts .buttonContainer button{
+        padding: 3vmin 10vmin;
+    }
+
+    .mainContent .adjustTexts .changeTexts .adjuster div {
+        flex-direction: column;
+        margin: 3vmin 0;
+    }
+    .mainContent .adjustTexts .changeTexts .adjuster {
+        margin: 8vmin 0;
+    }
+}

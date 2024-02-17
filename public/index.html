@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="all" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Egészségház - A Pesterzsébeti Egészségház - XX. kerület Főoldal
+    </title>
+    <meta
+      name="description"
+      content="A Pesterzsébeti Egészségház megújul! Szeretne kikapcsolódni, edzeni, relaxálni, testi épségét erősíteni? Mindezt egy helyen? Megteheti a megújult Pesterzsébeti Egészségházban!"
+    />
+    <meta
+      name="keywords"
+      content="egeszseghaz, egészségház, XX. kerület, pesterzsebet, pesterzsébet, erzsebet, erzsébet, pesterzsebeti, pesterzsébeti, erzsebeti, erzsebeti, átlós utca, fitness, relax, fogyás,"
+    />
+    <meta property="og:title" content="A Pesterzsébeti Egészségház Főoldala" />
+    <meta
+      property="og:description"
+      content="A Pesterzsébeti Egészségház megújul! Szeretne kikapcsolódni, edzeni, relaxálni, testi épségét erősíteni? Mindezt egy helyen? Megteheti a megújult Pesterzsébeti Egészségházban!"
+    />
+    <meta property="og:image" content="./public/main.jpg" />
+    <meta property="og:url" content="https://www.erzsebetiegeszseghaz.hu" />
+    <!--------------------------------------------------->
+    <link rel="stylesheet" href="styles/index/index.css" />
+    <link rel="stylesheet" href="styles/services/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="public/logo.png" />
+    <script src="scripts/index/index.js"></script>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.7/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <!-- <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDgwaUc_fsk9zfpMAKv1HvUlFv22Idhrl8",
+          authDomain: "egeszseghazpesterzsebet.firebaseapp.com",
+          projectId: "egeszseghazpesterzsebet",
+          storageBucket: "egeszseghazpesterzsebet.appspot.com",
+          messagingSenderId: "220968774410",
+          appId: "1:220968774410:web:2f270bfb3289390fb8a8f3",
+          measurementId: "G-BJH2GNPBCH"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script> -->
+  </head>
+  <body>
+    <div class="topnavOpener">
+      <i class="fa fa-navicon"></i>
+    </div>
+    <div class="topnav">
+      <div class="title">
+        <h3>Egészségház</h3>
+      </div>
+      <div class="options">
+        <button onclick="toFirstPage()" id="topnavOption">
+          <p>Főoldal</p>
+          <span id="topnavSpan" style="width: 100%"></span>
+        </button>
+        <button id="topnavOption1" onclick="toSecondPage()">
+          <p>Rólunk</p>
+          <span id="topnavSpan1"></span>
+        </button>
+        <button id="topnavOption2" onclick="TothirdPage()">
+          <p>Szolgáltatásaink</p>
+          <span id="topnavSpan2"></span>
+        </button>
+        <button id="topnavOption3" onclick="toFourthPage()">
+          <p>Foglalás</p>
+          <span id="topnavSpan3"></span>
+        </button>
+        <button id="topnavOption4" onclick="toFifthPage()">
+          <p>Admin</p>
+          <span id="topnavSpan4"></span>
+        </button>
+      </div>
+    </div>
+
+    <!--------------------------------------------------->
+
+    <div class="popupContainer">
+      <div class="popup">
+        <div class="icon">
+          <img
+            src="./public/soszoba/20220521_161801.jpg"
+            alt="image-of-soszoba"
+            onclick="zoom(this.src)"
+          />
+        </div>
+        <div class="text">
+          <h4 style="text-align: center">
+            Megnyílt a sószoba az Egészségházban
+          </h4>
+          <p>
+            A sós levegő gyógyító erejét már az ókorban is ismerték. Előnye,
+            hogy a várandósság időszakában és kisgyermekkortól is alkalmazható
+            légúti fertőzések, asztma, allergia és bőrproblémák kezelésére, de
+            jótékony hatása a stresszoldás terén is érvényesül.
+          </p>
+        </div>
+        <div class="buttons">
+          <button
+            onclick="closeModal(document.querySelector(`.popupContainer`))"
+          >
+            Értem</button
+          ><a href="pages/services.html?selected=sószoba">Részletek</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mainContent">
+      <div class="firstElement">
+        <div class="text">
+          <img
+            src="/public/main.jpg"
+            alt="image-of-egészségház"
+            data-aos="fade-right"
+          />
+          <div class="content">
+            <h1>Üdvözöljük oldalunkon!</h1>
+            <span></span>
+            <p>
+              Ha szeretnél elkezdeni az Egészégeddel foglalkozni, akkor itt az
+              alkalom. Gyere és próbáld ki az Átlós utca 17-19 alatt található
+              Pesterzsébeti Egészségházat, ahol az Egészségedért vagyunk.
+            </p>
+            <div class="phone">
+              <i class="fa fa-phone"></i>
+              <p>06 30 573 2212</p>
+              <i class="fa fa-facebook"></i>
+              <a
+                href="https://m.facebook.com/egeszseghazfitness/"
+                id="facebookLink"
+                >Facebook oldal megtekintése</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mainContainer" id="services">
+        <h3 id="choose">
+          Ezekkel a szolgáltatásokkal várjuk kedves Vendégeinket!
+        </h3>
+        <div class="searchContainer">
+          <input
+            type="text"
+            id="search"
+            placeholder="Keressen rá egy szolgáltatásra..."
+            autocomplete="off"
+          />
+        </div>
+        <div class="searchBlocks">
+          <div class="container">
+            <h2>Adatok betöltése...</h2>
+            <div class="lds-hourglass"></div>
+          </div>
+          <!-- <div class="searches" id="aquafitness" onclick="loadService(this.id)">aquafitness</div>
+            <div class="searches" id="edzőterem" onclick="loadService(this.id)">edzőterem</div>
+            <div class="searches" id="fodrászat" onclick="loadService(this.id)">fodrászat</div>
+            <div class="searches" id="gyerekjóga" onclick="loadService(this.id)">gyerekjóga</div>
+            <div class="searches" id="gyerekzsúr" onclick="loadService(this.id)">gyerekzsúr</div>
+            <div class="searches" id="gyógymasszázs" onclick="loadService(this.id)">gyógymasszázs</div>
+            <div class="searches" id="gyógytorna" onclick="loadService(this.id)">gyógytorna</div>
+            <div class="searches" id="hatha_jóga" onclick="loadService(this.id)">hatha jóga</div>
+            <div class="searches" id="nyári_gyerek_tábor" onclick="loadService(this.id)">nyári gyerek tábor</div>
+            <div class="searches" id="sminkoktatás" onclick="loadService(this.id)">sminkoktatás</div>
+            <div class="searches" id="speed_fitness" onclick="loadService(this.id)">speed fitness</div>
+            <div class="searches" id="spinning" onclick="loadService(this.id)">spinning</div>
+            <div class="searches" id="spirituális_tér_teremfoglalás" onclick="loadService(this.id)">spirituális tér, teremfoglalás</div>
+            <div class="searches" id="stretching" onclick="loadService(this.id)">stretching</div>
+            <div class="searches" id="szauna" onclick="loadService(this.id)">szauna</div>
+            <div class="searches" id="szemöldök_laminálás" onclick="loadService(this.id)">szemöldök laminálás</div>
+            <div class="searches" id="szolárium" onclick="loadService(this.id)">szolárium</div>
+            <div class="searches" id="sószoba" onclick="loadService(this.id)">sószoba</div>
+            <div class="searches" id="zumba" onclick="loadService(this.id)">zumba</div>
+            <div class="searches" id="úszásoktatás" onclick="loadService(this.id)">úszásoktatás</div> -->
+        </div>
+        <div class="chosenService" id="chosenService" style="margin-bottom: 0">
+          <div class="bigText">
+            <h2>Lorem</h2>
+            <span class="separator"></span>
+            <div>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Excepturi amet atque unde assumenda, dicta non voluptatibus,
+              officiis expedita est nisi quia eligendi tenetur? Quod quo
+              adipisci atque facere sint hic.
+            </div>
+          </div>
+          <img src="" alt="img-of-service" />
+        </div>
+        <div class="chosenService" id="prices">
+          <h2>Árlista</h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="secondTitle">
+        <h3>Amikre számíthat:</h3>
+      </div>
+      <div class="secondElement">
+        <div class="seconds">
+          <div class="second" data-aos="zoom-in-up">
+            <h3>Újdonság</h3>
+            <div class="desc">
+              <p>Megújult szaunánkkal várjuk kedves Vendégeinket!</p>
+              <a href="pages/services/szauna.html">Tovább olvasok</a>
+            </div>
+          </div>
+        </div>
+        <div class="triangleDiv" data-aos="fade-up-left">
+          <div class="text">
+            <h3>Most már sószobával is várjuk vendégeinket!</h3>
+          </div>
+        </div>
+      </div>
+      <div class="intersectionForAds">
+        <div class="content">
+          <img
+            src="./public/rendezvenyterem/280026706_319390760310522_6233385618891080538_n.jpg"
+            alt="rendezvenyterem-image"
+            onclick="zoom(this.src)"
+          />
+          <div class="text">
+            <h1>Újdonság!!</h1>
+            <p>
+              Az Egészségház új szolgáltatással bővült! Mostantól egy 95
+              négyzetméteres rendezvényteremmel várjuk kedves vendégeinket.
+              Érdeklődni az alábbi telefonszámon lehet: +36 70 373 3772.
+            </p>
+            <h3>Minek béreljem ki?</h3>
+            <p>
+              A rendezvényterem bérelhető oktatásokra, elvonulásokra,
+              bemutatókra, női klubokra, stb, voltaképpen, bármilyen célből kell
+              egy terem, béreljen egyet nálunk!
+            </p>
+          </div>
+        </div>
+        <span
+          class="separator"
+          style="
+            margin: 10vmin 0;
+            height: 1px;
+            width: 80%;
+            background-color: #8e715b;
+          "
+        ></span>
+        <div class="imgsWrapper">
+          <div class="imgs">
+            <div
+              class="img"
+              id="img1"
+              style="
+                background: url('./public/rendezvenyterem/279636257_1203116513832669_3622478131220463161_n.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+              "
+              onclick="zoom('./public/rendezvenyterem/279636257_1203116513832669_3622478131220463161_n.jpg')"
+            ></div>
+            <div
+              class="img"
+              style="
+                background: url('./public/rendezvenyterem/279852064_5739300499456142_2860702744360613773_n.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+              "
+              onclick="zoom('./public/rendezvenyterem/279852064_5739300499456142_2860702744360613773_n.jpg')"
+            ></div>
+            <div
+              class="img"
+              style="
+                background: url('./public/rendezvenyterem/279930253_1156847215068552_6023432165366883081_n.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+              "
+              onclick="zoom('./public/rendezvenyterem/279930253_1156847215068552_6023432165366883081_n.jpg')"
+            ></div>
+            <div
+              class="img"
+              id="img2"
+              style="
+                background: url('./public/rendezvenyterem/279753900_987264562160016_1091675829910886886_n.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+              "
+              onclick="zoom('./public/rendezvenyterem/279753900_987264562160016_1091675829910886886_n.jpg')"
+            ></div>
+          </div>
+        </div>
+        <span
+          class="separator1"
+          style="
+            margin: 10vmin 0;
+            height: 1px;
+            width: 80%;
+            background-color: #8e715b;
+          "
+        ></span>
+      </div>
+      <div class="thirdElement">
+        <div class="images">
+          <div class="third" data-aos="fade-left">
+            <p>
+              Nyáron úszótábort is rendez az Egészségház. Írjon vagy hívjon
+              minket a részletekért!
+            </p>
+            <div
+              class="img"
+              id="img1"
+              onclick="zoom('/public/nyaritabor/Copy\ of\ camping\ flyer\ advertisement\ -\ Made\ with\ PosterMyWall\(2\).jpg')"
+            ></div>
+          </div>
+          <div class="third" data-aos="fade-left">
+            <div
+              class="img"
+              id="img2"
+              onclick="zoom('/public/nyaritabor/Születésnapi_bulik_az_egészségházban_2022.jpeg')"
+            ></div>
+            <p>
+              A születésnapi bulik sem jelentenek nekünk problémát! Rendezze meg
+              nálunk a zsúrokat!
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="text">
+          <a href="">Nyitvatartás:</a>
+          <p>H: 08.00-20.00</p>
+          <p>K: 08.00-20.00</p>
+          <p>SZ: 08.00-20.00</p>
+          <p>CS: 08.00-20.00</p>
+          <p>P: 08.00-20.00</p>
+          <p>SZ: ZÁRVA</p>
+          <p>V: ZÁRVA</p>
+          <div class="separator"></div>
+          <a>Házirend</a>
+        </div>
+        <div class="triangle" data-aos="fade-down">
+          <p>Adataink</p>
+        </div>
+        <div class="text" right>
+          <a
+            href="https://www.google.com/maps/place/Egészségház/@47.4235536,19.1048283,17z/data=!3m1!4b1!4m5!3m4!1s0x4741e81c78fa2203:0x50b71d885e497e1a!8m2!3d47.4235536!4d19.1070223"
+            style="text-decoration: underline"
+            target="_blank"
+            >Helyszín</a
+          >
+          <div class="separator"></div>
+          <a href="">Elérhetőségek</a>
+          <p>06 30 573 2212</p>
+          <p>egfit.20@gmail.com</p>
+          <div class="separator"></div>
+          <a href="">Adatkezelési tájékoztató</a>
+        </div>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../scripts/services/app.js"></script>
+    <script>
+      AOS.init({
+        offset: 100, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
+        easing: "ease-in-out", // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: true
+      });
+    </script>
+    <script>
+      function TothirdPage() {
+        window.location.href = "/index.html#services";
+      }
+    </script>
+  </body>
+</html>

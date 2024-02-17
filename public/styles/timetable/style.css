@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .form .data, .mainContent .form #exceptionHolder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #d8c2ad;
+  max-width: 90%;
+  width: auto;
+  padding: 15vmin 30vmin;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  margin: 10vmin 0;
+}
+.mainContent .form .data .weekdays, .mainContent .form #exceptionHolder .weekdays {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-top: 8vmin;
+}
+.mainContent .form .data .weekdays .weekday, .mainContent .form #exceptionHolder .weekdays .weekday {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 1.5vmin 0;
+}
+.mainContent .form .data .weekdays .weekday input, .mainContent .form #exceptionHolder .weekdays .weekday input {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  margin: 0;
+}
+.mainContent .form .data select, .mainContent .form #exceptionHolder select {
+  padding: 2vmin 3vmin;
+  border-radius: 6px;
+  background: white;
+  color: #888;
+  border: none;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  display: none;
+}
+.mainContent .form .data .lds-hourglass, .mainContent .form #exceptionHolder .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+.mainContent .form .data .lds-hourglass:after, .mainContent .form #exceptionHolder .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #8e715b;
+  border-color: #8e715b transparent #8e715b transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite;
+}
+@-webkit-keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+.mainContent .form .data h5, .mainContent .form #exceptionHolder h5 {
+  text-align: center;
+}
+.mainContent .form .data input[type=text], .mainContent .form #exceptionHolder input[type=text] {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 2vmin 1vmin;
+  margin-left: 3vmin;
+}
+.mainContent .form .data input[type=checkbox], .mainContent .form #exceptionHolder input[type=checkbox] {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+.mainContent .form .data .exceptions, .mainContent .form #exceptionHolder .exceptions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-top: 5vmin;
+  padding: 5vmin 10vmin;
+  width: auto;
+  max-width: 90%;
+  border: 2px solid #8e715b;
+}
+.mainContent .form .data .exceptions .day, .mainContent .form .data .exceptions .hour, .mainContent .form #exceptionHolder .exceptions .day, .mainContent .form #exceptionHolder .exceptions .hour {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2vmin 0;
+}
+.mainContent .form .data .exceptions .day label, .mainContent .form .data .exceptions .hour label, .mainContent .form #exceptionHolder .exceptions .day label, .mainContent .form #exceptionHolder .exceptions .hour label {
+  font-size: 2vh;
+  text-align: center;
+  margin-bottom: 1vmin;
+}
+.mainContent .form .data .exceptions .day input[type=text], .mainContent .form .data .exceptions .hour input[type=text], .mainContent .form #exceptionHolder .exceptions .day input[type=text], .mainContent .form #exceptionHolder .exceptions .hour input[type=text] {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 2vmin 1vmin;
+  margin-left: 3vmin;
+}
+.mainContent .form .data .exceptions .day input[type=time], .mainContent .form .data .exceptions .hour input[type=time], .mainContent .form #exceptionHolder .exceptions .day input[type=time], .mainContent .form #exceptionHolder .exceptions .hour input[type=time] {
+  margin: 0 1vmin;
+}
+.mainContent .form .data .exceptions .addNewExceptions, .mainContent .form #exceptionHolder .exceptions .addNewExceptions {
+  background-color: #8e715b;
+  font-weight: bold;
+  font-size: 2vh;
+  border-radius: 5px;
+  padding: 1.5vmin 6vmin;
+  margin-top: 5vmin;
+}
+.mainContent .form button {
+  background-color: #d8c2ad;
+  border: none;
+  border-radius: 5px;
+  padding: 2vmin 6vmin;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+}
+.mainContent .form button:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

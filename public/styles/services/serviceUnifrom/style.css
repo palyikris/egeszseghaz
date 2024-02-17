@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+.textBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .topnavOpener {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 3vmin 5vmin;
+  background-color: #d8c2ad;
+  display: none;
+}
+body .topnav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 8vmin;
+  position: absolute;
+  z-index: 10;
+}
+body .topnav .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 5vmin 0 0 5vmin;
+}
+body .topnav .title h3 {
+  font-size: 5vh;
+  font-weight: bold;
+}
+body .topnav .options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+body .topnav .options button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 3vmin 5vmin;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+body .topnav .options button:hover {
+  cursor: pointer;
+}
+body .topnav .options button:active {
+  outline: none;
+}
+body .topnav .options button p {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+body .topnav .options button span {
+  transition: all 0.5s;
+  background-color: black;
+  width: 0%;
+  height: 2px;
+  margin-top: 1vmin;
+}
+
+.connections {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10vmin 5vmin;
+  margin: 5vmin 0;
+}
+.connections .data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 3vmin;
+}
+.connections .data i, .connections .data div {
+  max-width: 50%;
+  margin: 0 3vmin;
+}
+
+.descForPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 0vmin 20vmin;
+  margin-bottom: 10vmin;
+}
+.descForPage #desc {
+  padding: 5vmin 0;
+}
+.descForPage .sep {
+  width: 30%;
+  height: 1.2px;
+  background-color: #d8c2ad;
+}
+
+body .topnav .options button p {
+  color: white;
+}
+body .topnav .options button span {
+  background-color: white;
+}
+
+.priceList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0vmin 0 20vmin 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.priceList table {
+  width: auto;
+}
+.priceList table #title {
+  padding: 5vmin 3vmin;
+  text-align: center;
+  font-size: 5vh;
+  border-bottom: 1px solid #d8c2ad;
+  margin-bottom: 5vmin;
+}
+.priceList table tr td {
+  padding: 2vmin 0;
+  width: 50%;
+  text-align: center;
+}
+.priceList table tr .first {
+  padding-top: 5vmin;
+}
+
+@media only screen and (min-width: 800px) {
+  .priceList table {
+    max-width: 80%;
+  }
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 10vmin 0 10vmin 10vmin;
+}
+.buttonContainer a {
+  padding: 3vmin 6vmin;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  background-color: #d8c2ad;
+  box-shadow: 0px 0px 10px 0px rgba(24, 21, 20, 0.95);
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=style.css.map */

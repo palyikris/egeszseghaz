@@ -1,0 +1,651 @@
+@import "../uniform/uniform";
+
+// ! -------------------------------------------------
+
+// ! -------------------------------------------------
+
+// .picDiv{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+//     width: 100%;
+//     z-index: 10;
+//     position: absolute;
+//     z-index: 8;
+//     background-color: #654545;
+//     // background-position: center;
+//     // background-repeat: no-repeat;
+//     // background-size: cover;
+//     height: 100vh;
+//     flex-direction: column;
+//     .title{
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100%;
+//         font-size: 8vh;
+//         text-transform: uppercase;
+//         p{
+//             color: white;
+//             font-weight: bold;
+//             text-align: center;
+//         }
+//     }
+//     .text{
+//         margin-top: 7vmin;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100%;
+//         font-size: 4vh;
+//         p{
+//             color: white;
+//             font-weight: 400;
+//             text-align: center;
+//         }
+//     }
+// }
+.topnavOpener {
+  @include centerDiv(row, nowrap);
+  justify-content: flex-start;
+  padding: 5vmin 0 0 5vmin;
+  background-color: #d8c2ad;
+  display: none;
+}
+
+.topnav {
+  @include centerDiv(row, nowrap);
+  padding: 0 8vmin;
+  position: absolute;
+  z-index: 10;
+  .title {
+    @include centerDiv(row, nowrap);
+    justify-content: flex-start;
+    padding: 5vmin 0 0 5vmin;
+    h3 {
+      font-size: 5vh;
+      font-weight: bold;
+    }
+  }
+  .options {
+    @include centerDiv(row, nowrap);
+    justify-content: flex-end;
+    button {
+      @include centerDiv(column, nowrap);
+      width: auto;
+      padding: 3vmin 5vmin;
+      text-decoration: none;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      &:hover {
+        cursor: pointer;
+      }
+      &:active {
+        outline: none;
+      }
+      p {
+        font-size: 2.5vh;
+        font-weight: bold;
+      }
+      span {
+        transition: all 0.5s;
+        background-color: black;
+        width: 0%;
+        height: 2px;
+        margin-top: 1vmin;
+      }
+    }
+  }
+}
+
+// ! -------------------------------------------------
+
+.mainContent {
+  @include centerDiv(column, nowrap);
+  .firstElement {
+    @include centerDiv(row, nowrap);
+    justify-content: space-evenly;
+    padding: 0vmin 5vmin 0vmin 5vmin;
+    .text {
+      @include centerDiv(row, nowrap);
+      justify-content: flex-end;
+      align-items: flex-start;
+      border-radius: 8px;
+      position: relative;
+      height: 100vh;
+      img {
+        position: absolute;
+        z-index: 8;
+        top: auto;
+        bottom: auto;
+        left: 8vmin;
+        border-radius: 10px;
+        top: 20vmin;
+        width: 70vmin;
+      }
+      .content {
+        @include centerDiv(column, nowrap);
+        max-width: 60%;
+        border-radius: 5px;
+        &::after {
+          content: "";
+          padding: 70vmin 75vmin;
+          background-color: #d8c2ad;
+          position: absolute;
+          z-index: -1;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+        }
+        h1 {
+          font-size: 5vh;
+          text-align: center;
+          margin-top: 20vmin;
+        }
+        p {
+          margin-top: 8vmin;
+          width: 60vmin;
+          margin-bottom: 10vmin;
+        }
+        span {
+          width: 60%;
+          background-color: #8e715b;
+          padding: 0.5px 0;
+          margin-top: 10vmin;
+        }
+        .phone {
+          @include centerDiv(row, nowrap);
+          p {
+            margin: 0;
+            margin-left: 3vmin;
+            width: auto;
+          }
+          .fa-facebook {
+            margin-left: 15vmin;
+          }
+          a {
+            margin-left: 3vmin;
+            color: black;
+          }
+          #facebookLink {
+            max-width: 40vmin;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .secondTitle {
+    @include centerDiv(row, nowrap);
+    justify-content: flex-start;
+    padding-left: 10vmin;
+    padding-bottom: 6vmin;
+  }
+  .secondElement {
+    @include centerDiv(row, nowrap);
+    flex-direction: column;
+    .seconds {
+      @include centerDiv(column, nowrap);
+      width: 80%;
+      .second {
+        @include centerDiv(row, nowrap);
+        justify-content: space-around;
+        padding: 3vmin 5vmin;
+        width: 150vmin;
+        margin: 3vmin 0;
+        h3 {
+          width: 70vmin;
+          font-size: 6vh;
+          padding-right: 3vmin;
+          text-align: center;
+          color: #8e715b;
+        }
+        .desc {
+          padding: 3vmin 10vmin;
+          @include centerDiv(column, nowrap);
+          border-left: 1.2px solid #d8c2ad;
+          a {
+            text-decoration: none;
+            color: black;
+            padding: 2vmin 5vmin;
+            border-radius: 5px;
+            background-color: #d8c2ad;
+            margin-top: 3vmin;
+            text-transform: uppercase;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .triangleDiv {
+      background-color: #d8c2ad;
+      padding: 12vmin 2vmin 22vmin 2vmin;
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        75% 75%,
+        75% 100%,
+        50% 75%,
+        0% 75%
+      );
+      right: 0;
+      margin-top: 20vmin;
+      @include centerDiv(column, nowrap);
+      width: 80vmin;
+      .text {
+        @include centerDiv(row, nowrap);
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .intersectionForAds {
+    @include centerDiv(column, nowrap);
+    margin: 10vmin 0;
+    padding: 10vmin 5vmin;
+    .content {
+      @include centerDiv(row, nowrap);
+      background-color: #d8c2ad;
+      border-radius: 10px;
+      padding: 0 5vmin;
+      img {
+        width: 60vmin;
+        border-radius: 10px;
+        transition: all 0.4s;
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+      .text {
+        @include centerDiv(column, nowrap);
+        width: 60%;
+        padding: 10vmin 5vmin 10vmin 10vmin;
+        h1 {
+          margin-bottom: 8vmin;
+        }
+        h3 {
+          margin: 4vmin 0;
+        }
+      }
+    }
+    span {
+      max-width: 80%;
+      transition: all 0.5s;
+    }
+    .imgsWrapper {
+      @include centerDiv(row, nowrap);
+      .imgs {
+        @include centerDiv(row, wrap);
+        justify-content: space-evenly;
+        .img {
+          padding: 20vmin;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          border-radius: 5px;
+          margin: 3vmin 0;
+          transition: all 0.4s;
+          &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .thirdElement {
+    @include centerDiv(row, nowrap);
+    padding: 15vmin 0;
+    .images {
+      @include centerDiv(column, nowrap);
+      .third {
+        @include centerDiv(row, nowrap);
+        justify-content: space-evenly;
+        width: 150vmin;
+        max-width: 90%;
+        margin: 12vmin 0;
+        padding: 5vmin 3vmin;
+        p {
+          width: 50vmin;
+        }
+        .img {
+          width: 60vmin;
+          height: 60vmin;
+          @include bgPic;
+          border-radius: 5px;
+          transition: all 0.4s;
+          &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+        #img1 {
+          background: url("../../public/nyaritabor/Copy\ of\ camping\ flyer\ advertisement\ -\ Made\ with\ PosterMyWall\(2\).jpg");
+          @include bgPic;
+        }
+        #img2 {
+          background: url("../../public/nyaritabor/Születésnapi_bulik_az_egészségházban_2022.jpeg");
+          @include bgPic;
+        }
+        #img3 {
+          background: url("../../public/hazkepek/thirdonmainpage3.jpg");
+          @include bgPic;
+        }
+        &::after {
+          content: "";
+          background-color: #d8c2ad;
+          border-radius: 10px;
+          padding: 40vmin 75vmin;
+          position: absolute;
+          z-index: -1;
+          transform: skewY(6deg);
+        }
+      }
+    }
+  }
+  footer {
+    @include centerDiv(row, nowrap);
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: #d8c2ad;
+    margin-top: 10vmin;
+    div {
+      width: 100%;
+    }
+    .text {
+      @include centerDiv(column, nowrap);
+      padding: 10vmin 1vmin 10vmin 1vmin;
+      a {
+        text-decoration: none;
+        color: black;
+        padding: 3vmin 1vmin;
+      }
+    }
+
+    .separator {
+      margin: 6vmin 0;
+      width: 40%;
+      padding: 0.5px 0;
+      background-color: #8e715b;
+    }
+
+    .triangle {
+      @include centerDiv(column, nowrap);
+      background-color: #8e715b;
+      clip-path: polygon(50% 100%, 100% 0, 0 0);
+      padding: 5vmin 5vmin 10vmin 5vmin;
+      width: 70%;
+      margin: 0 10vmin;
+    }
+  }
+}
+.modal {
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(69, 69, 69, 0.8);
+  @include centerDiv(column, nowrap);
+  padding: 5vmin;
+  height: 100vh;
+  top: 0;
+  .zoomedImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1vmin;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .topnavOpener {
+    display: inline-block;
+  }
+  .topnav {
+    display: none;
+    position: relative;
+    background-color: #d8c2ad;
+    .options {
+      flex-direction: column;
+    }
+    .title {
+      display: none;
+    }
+  }
+  .mainContent {
+    .firstElement {
+      .text {
+        flex-direction: column-reverse;
+        img {
+          width: 70vmin;
+          position: relative;
+          margin: auto;
+          margin-top: 12vmin;
+          left: 0;
+        }
+        .content {
+          max-width: 100%;
+          width: 100%;
+          &::after {
+            padding: 80vmin 50vmin;
+          }
+          p {
+            width: 90%;
+            font-size: 2.5vh;
+            text-align: center;
+          }
+          .phone {
+            p {
+              margin-left: 5vmin;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+    .secondTitle {
+      margin-top: 30vmin;
+    }
+    .secondElement {
+      flex-direction: column;
+      .seconds {
+        width: 100%;
+        .second {
+          flex-direction: column;
+          width: 100%;
+          h3 {
+            background-color: #d8c2ad;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            font-size: 6vh;
+            padding: 4vmin 1vmin;
+          }
+          .desc {
+            border: 1px solid #d8c2ad;
+            border-radius: 0 0 10px 10px;
+            p {
+              font-size: 2.5vh;
+            }
+            a {
+              margin-top: 5vmin;
+              padding: 5vmin 3vmin;
+              font-size: 2.5vh;
+            }
+          }
+        }
+      }
+      .triangleDiv {
+        width: 90%;
+        margin-top: 10vmin;
+      }
+    }
+    .thirdElement {
+      .images {
+        .third {
+          flex-direction: column;
+          margin-top: 40vmin;
+          p {
+            text-align: center;
+            margin: 10vmin 0;
+          }
+          &::after {
+            content: "";
+            background-color: #d8c2ad;
+            border-radius: 10px;
+            padding: 60vmin 40vmin;
+            position: absolute;
+            z-index: -1;
+            transform: skewY(6deg);
+          }
+          .img {
+            width: 50vmin;
+            height: 30vmin;
+          }
+        }
+      }
+    }
+    footer {
+      flex-direction: column;
+      margin-top: 20vmin;
+      .text,
+      .triangle {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        * {
+          width: 100%;
+          text-align: center;
+        }
+        .separator {
+          width: 40%;
+        }
+      }
+      .triangle {
+        padding: 15vmin 5vmin;
+        clip-path: polygon(100% 50%, 50% 0%, 0% 50%, 50% 100%);
+      }
+    }
+  }
+}
+
+.popupContainer {
+  position: fixed;
+  z-index: 30;
+  top: 5%;
+  @include centerDiv(row, nowrap);
+  display: none;
+  .popup {
+    @include centerDiv(column, nowrap);
+    width: auto;
+    background-color: #d8c2ad;
+    padding: 5vmin 0;
+    box-shadow: 0px 1px 11px 3px rgba(0, 0, 0, 0.75);
+    max-width: 60%;
+    .icon {
+      @include centerDiv(row, nowrap);
+      img {
+        height: 40vmin;
+        border-radius: 5px;
+        transition: all 0.4s;
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
+    .text {
+      @include centerDiv(column, nowrap);
+      padding: 1vmin 2vmin 1vmin 2vmin;
+      font-size: 3vh;
+      p {
+        width: 60%;
+        text-align: center;
+        padding: 1vmin 0;
+      }
+    }
+    .buttons {
+      @include centerDiv(row, nowrap);
+      justify-content: space-evenly;
+      a,
+      button {
+        text-decoration: none;
+        border: none;
+        color: black;
+        padding: 2vmin 5vmin;
+        border-radius: 5px;
+        background-color: #8e715b;
+        font-size: 3vh;
+        outline: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .popupContainer .popup .buttons {
+    flex-direction: column;
+    button {
+      margin: 3vmin 0;
+    }
+  }
+  .popupContainer {
+    width: 100%;
+    .popup {
+      width: 80%;
+      max-width: 80%;
+      .icon {
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+  .popupContainer .popup .text p {
+    font-size: 2vh;
+  }
+  .mainContent {
+    .firstElement {
+    }
+    .secondTitle {
+    }
+    .secondElement {
+      overflow: hidden;
+    }
+    .intersectionForAds {
+      padding-top: 5vmin;
+      padding-bottom: 5vmin;
+      .content {
+        flex-direction: column;
+        padding-top: 5vmin;
+        padding-bottom: 5vmin;
+        img {
+          width: 100%;
+        }
+        .text {
+          text-align: center;
+          width: 100%;
+          h3 {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .thirdElement {
+      overflow-x: hidden;
+      height: auto;
+      padding: 0 0 30vmin 0;
+    }
+    footer {
+    }
+  }
+}

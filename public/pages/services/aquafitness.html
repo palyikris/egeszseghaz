@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesterzsébet Egészségház</title>
+    <link rel="stylesheet" href="../../styles/services/services/aquafitness/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../../public/logo.png">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+<body>
+    <div class="topnavOpener">
+        <i class="fa fa-navicon"></i>
+    </div>
+    <div class="topnav">
+        <div class="options">
+            <button onclick="toFirstPage()" id="topnavOption">
+            <p>Főoldal</p>
+            <span id="topnavSpan"></span>
+            </button>
+            <button id="topnavOption1" onclick="toSecondPage()">
+            <p>Rólunk</p>
+            <span id="topnavSpan1"></span>
+            </button>
+            <button id="topnavOption2" onclick="toThirdPage()">
+                <p>Szolgáltatásaink</p>
+                <span id="topnavSpan2" style="width: 100%"></span>
+            </button>
+            <button id="topnavOption3" onclick="toFourthPage()">
+                <p>Foglalás</p>
+                <span id="topnavSpan3"></span>
+            </button>
+            <button id="topnavOption4" onclick="toFifthPage()">
+            <p>Admin</p>
+            <span id="topnavSpan4"></span>
+            </button>
+        </div>
+    </div>
+    <div class="textBlock">
+        <div class="text">
+            <h1 id="userGreeter">Betöltés...</h1>
+            <h4 id="userGreeterDesc">Betöltés...</h4>
+            <i class="fa fa-angle-double-down"></i>
+        </div>
+    </div>
+    <div class="connections">
+        <div class="data">
+            <i class="fa fa-phone"></i>
+            <div id="phone"></div>
+        </div>
+    </div>
+    <div class="descForPage">
+        <div class="sep"></div>
+        <p id="desc">
+
+        </p>
+        <div class="sep"></div>
+    </div>
+    <div class="priceList">
+        <table>
+            <tr>
+                <td id="title" colspan="2">Edzések</td>
+            </tr>
+            <tr>
+                <td>Hétfő délelőtt: Dóri</td>
+                <td>Hétfő este: Gabi</td>
+            </tr>
+            <tr>
+                <td>Kedd délelőtt: Dóri</td>
+                <td>Kedd este: Edina</td>
+            </tr>
+            <tr>
+                <td>Szerda délelőtt: Ani</td>
+                <td>Szerda este: Julcsi</td>
+            </tr>
+            <tr>
+                <td>Csütörtök délelőtt: Julcsi</td>
+                <td>Csütörtök este: Julcsi</td>
+            </tr>
+            <tr>
+                <td>Péntek délelőtt: Dóri</td>
+                <td>Péntek este: Gabi</td>
+            </tr>
+        </table>
+    </div>
+    <div class="priceList">
+        <table>
+            <tr>
+                <td colspan="2" id="title">Árlista</td>
+            </tr>
+            <tr>
+                <td class="first">1. alk. AQUA Torna</td>
+                <td class="first">3 200 Ft</td>
+            </tr>
+            <tr>
+                <td>4 alk. AQUA bérlet</td>
+                <td>12 200 Ft</td>
+            </tr>
+            <tr>
+                <td>6 alk. AQUA bérlet</td>
+                <td>17 700 Ft</td>
+            </tr>
+            <tr>
+                <td>12 alk. AQUA bérlet</td>
+                <td>35 000 Ft</td>
+            </tr>
+            <tr>
+                <td>1. alk. AQUA Torna nyugdíjas</td>
+                <td>2 800 Ft</td>
+            </tr>
+            <tr>
+                <td>4 alk. AQUA nyugdíjas bérlet</td>
+                <td>10 600 Ft</td>
+            </tr>
+            <tr>
+                <td>6 alk. AQUA nyugdíjas bérlet</td>
+                <td>15 500 Ft</td>
+            </tr>
+            <tr>
+                <td>12 alk. AQUA nyugdíjas bérlet</td>
+                <td>30 600 Ft</td>
+            </tr>
+	    </table>
+    </div>
+    <div class="timetable">
+        <div class=""></div>
+        <table>
+            <tr>
+                <td class="days"></td>
+                <td class="days">Hétfő</td>
+                <td class="days">Kedd</td>
+                <td class="days">Szerda</td>
+                <td class="days">Csütörtök</td>
+                <td class="days">Péntek</td>
+                <td class="days">Szombat</td>
+            </tr>
+            <tr>
+                <td>8-9</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Dóri</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Dóri</td>
+                <td>AQUA<br>Edina</td>
+            </tr>
+            <tr>
+                <td>9-10</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Dóri</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Dóri</td>
+                <td>AQUA<br>Edina</td>
+            </tr>
+            <tr>
+                <td>10-11</td>
+                <td>AQUA<br>Ági</td>
+                <td></td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Dóri</td>
+                <td>AQUA<br>Edina</td>
+            </tr>
+            <tr>
+                <td class="end">11-12</td>
+                <td class="end"></td>
+                <td class="end"></td>
+                <td class="end"></td>
+                <td class="end"></td>
+                <td class="end"></td>
+                <td class="end"></td>
+            </tr>
+            <tr>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad">13-14</td>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad"></td>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad"></td>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad"></td>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad"></td>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad"></td>
+                <td class="end" style="border-top: 1.5px solid #d8c2ad"></td>
+            </tr>
+            <tr>
+                <td>14-15</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>15-16</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>16-17</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>17-18</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>18-19</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td>ÚSZÁSOKTATÁS<br>Kata</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>19-20</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Edina</td>
+                <td>AQUA<br>Dóri</td>
+                <td>AQUA<br>Ági</td>
+                <td>AQUA<br>Alida</td>
+                <td></td>
+            </tr>
+            
+        </table>
+    </div>
+    <div class="slideContainer">
+        <div class="slideShow">
+            
+        </div>
+        <div class="controls">
+            <div class="control" id="prev" onclick="prev()">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="dots"></div>
+            <div class="control" id="next" onclick="next()">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="buttonContainer">
+        <a class="home" href="../../index.html">
+            Vissza a főoldalra
+        </a>
+    </div>
+</body>
+<script src="../../scripts/loadImageForService/script.js"></script>
+<script>
+    function upCase(str) {
+        str = str.charAt(0).toUpperCase() + str.slice(1);
+        return str
+    }
+
+
+    let url_string = window.location;
+    let url = new URL(url_string);
+    let selected = url.searchParams.get("selected")
+
+    document.title = `Pesterzsébet Egészségház ${upCase(selected)}`;
+    document.getElementById("userGreeter").innerHTML = `Üdvözöljük az <span>${upCase(selected)}</span> oldalán!`
+    document.getElementById("userGreeterDesc").innerHTML = `Itt mindent megtudhat a ${upCase(selected)} szolgáltatásunkról!`
+
+
+    let topnavOption = document.querySelector("#topnavOption")
+
+    topnavOption.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan").style.width = "100%"
+    })
+    topnavOption.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan").style.width = "0%"
+    })
+
+    // ! --------------------------------------------------------------
+
+    let topnavOption1 = document.querySelector("#topnavOption1")
+
+    topnavOption1.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan1").style.width = "100%"
+    })
+    topnavOption1.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan1").style.width = "0%"
+    })
+
+    // ! ---------------------------------------------------------------
+
+    let topnavOption2 = document.querySelector("#topnavOption2")
+
+    topnavOption2.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan2").style.width = "100%"
+    })
+    topnavOption2.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan2").style.width = "0%"
+    })
+
+    // ! -------------------------------------------------------------
+
+    let topnavOption3 = document.querySelector("#topnavOption3")
+
+    topnavOption3.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan3").style.width = "100%"
+    })
+    topnavOption3.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan3").style.width = "0%"
+    })
+
+    // ! ------------------------------------------------------------
+
+    let topnavOption4 = document.querySelector("#topnavOption4")
+
+    topnavOption4.addEventListener("mouseover", () => {
+        document.getElementById("topnavSpan4").style.width = "100%"
+    })
+    topnavOption4.addEventListener("mouseout", () => {
+        document.getElementById("topnavSpan4").style.width = "0%"
+    })
+
+
+
+
+    function toSecondPage(){
+        window.location.href="../wip.html"
+    }
+
+    // ! ------------------------------------------------------------------
+
+    function toThirdPage(){
+        window.location.href="../services.html"
+    }
+
+    // ! -------------------------------------------------------------------------
+
+    function toFourthPage(){
+        window.location.href="../newreservation.html"
+    }
+
+    // ! -------------------------------------------------------------------
+
+    function toFifthPage(){
+        window.location.href="../login.html"
+    }
+
+    // ! -------------------------------------------------------------------
+
+    function toFirstPage(){
+        window.location.href = "../../index.html"
+    }
+
+    function loadIntro(){
+        let db = firebase.firestore();
+        let url_string = window.location;
+        let url = new URL(url_string);
+        let selected = url.searchParams.get("selected")
+
+        db.collection("newreservation").doc(selected).get().then(doc => {
+            document.title = `Pesterzsébet Egészségház ${upCase(selected)}`;
+            document.getElementById("userGreeter").innerHTML = `Üdvözöljük a <span>${upCase(selected)}</span> oldalán!`
+            if(doc.id.toLowerCase() === doc.data().desc.toLowerCase()){
+                document.getElementById("userGreeterDesc").innerHTML = ""
+                document.getElementById("desc").innerHTML = ""
+            }
+            else{
+                document.getElementById("userGreeterDesc").innerHTML = `Itt mindent megtudhat a ${upCase(selected)} szolgáltatásunkról!`
+            }
+        })
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        let app = firebase.app();
+        let db = firebase.firestore();
+
+        let url_string = window.location;
+        let url = new URL(url_string);
+        let selected = url.searchParams.get("selected")
+
+
+        db.collection("newreservation").doc(selected).get().then(doc => { 
+            document.getElementById("phone").innerHTML = doc.data().phone;
+            document.getElementById("desc").innerHTML = doc.data().desc;
+        })
+
+        loadBackgroundImage()
+        loadIntro()
+
+    loadBackgroundImage()
+    })
+
+
+    let navicon = document.querySelector(".topnavOpener i");
+
+    navicon.addEventListener("click", () => {
+    if (document.querySelector(".topnav").style.display == "none") {
+        document.querySelector(".topnav").style.marginTop = "8vmin"
+        document.querySelector(".topnav").style.display = "flex"
+    }
+    else{
+        document.querySelector(".topnav").style.display = "none"
+    }
+    })
+
+    function loadBackgroundImage(){
+
+        let db = firebase.firestore();
+        let url_string = window.location;
+        let url = new URL(url_string);
+        let selected = url.searchParams.get("selected")
+
+
+        db.collection("newreservation").doc(selected).get().then(doc => {
+            document.querySelector("body .textBlock").style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${doc.data().img}")`
+            document.querySelector("body .textBlock").style.backgroundSize = "cover"
+            document.querySelector("body .textBlock").style.backgroundRepeat = "no-repeat"
+            document.querySelector("body .textBlock").style.backgroundPosition = "center"
+        })
+    }
+
+
+    function createImgDots(){
+        for (let i = 0; i < document.querySelectorAll(".img").length; i++) {
+            let dot = document.createElement("div")
+            dot.setAttribute("class", "dot")
+            dot.setAttribute("id", i)
+            dot.setAttribute("onclick", "setImageByDot(this.id)")
+            if(i === 0){
+                dot.style.backgroundColor = "white"
+            }
+            document.querySelector(".dots").appendChild(dot)
+        }
+    }
+
+    createImgDots()
+
+
+
+    let i = 1
+
+    function changeImg(){
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        if(i === imgs.length){
+            i = 0;
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        else{
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        i++
+    }
+    let timer = setInterval(changeImg, 6000)
+
+    function prev(){
+        clearInterval(timer)
+        i--
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        if(i < 0){
+            i = imgs.length-1;
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        else{
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        timer = setInterval(changeImg, 6000)
+    }
+
+    function next() {
+        clearInterval(timer)
+        i++
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        if(i === imgs.length){
+            i = 0;
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        else{
+            imgs.forEach(img => {
+                img.style.opacity = "0"
+            })
+            dots.forEach(dot => {
+                dot.style.backgroundColor = "transparent"
+            })
+            imgs[i].style.opacity = "1"
+            dots[i].style.backgroundColor = "white"
+        }
+        timer = setInterval(changeImg, 6000)
+    }
+
+    function setImageByDot(id){
+        let imgs = document.querySelectorAll(".img")
+        let dots = document.querySelectorAll(".dot")
+        i = parseInt(id)
+        imgs.forEach(img => {
+            img.style.opacity = "0"
+        })
+        dots.forEach(dot => {
+            dot.style.backgroundColor = "transparent"
+        })
+        imgs[i].style.opacity = "1"
+        dots[i].style.backgroundColor = "white"
+        clearInterval(timer)
+        timer = setInterval(changeImg, 6000)
+    }
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesterzsébet Egészségház Admin</title>
+    <link rel="stylesheet" href="../styles/timetable/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../public/logo.png">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+<body>
+    <div class="mainContent">
+        <div class="form">
+            <div class="data">
+                <div class="lds-hourglass">
+                    Adatok betöltése...
+                </div>
+                <select name="" id="selectItem">
+
+                </select>
+            </div>
+            <div class="data">
+                <h3>Órarend előkészítése</h3>
+                <div class="weekdays">
+                    <div class="weekday">
+                        <label for="">Hétfő</label>
+                        <input type="checkbox" name="1" id="">
+                    </div>
+                    <div class="weekday">
+                        <label for="">Kedd</label>
+                        <input type="checkbox" name="2" id="">
+                    </div>
+                    <div class="weekday">
+                        <label for="">Szerda</label>
+                        <input type="checkbox" name="3" id="">
+                    </div>
+                    <div class="weekday">
+                        <label for="">Csütörtök</label>
+                        <input type="checkbox" name="4" id="">
+                    </div>
+                    <div class="weekday">
+                        <label for="">Péntek</label>
+                        <input type="checkbox" name="5" id="">
+                    </div>
+                    <div class="weekday">
+                        <label for="">Szombat</label>
+                        <input type="checkbox" name="6" id="">
+                    </div>
+                    <div class="weekday">
+                        <label for="">Vasárnap</label>
+                        <input type="checkbox" name="0" id="">
+                    </div>
+                </div>
+            </div>
+            <div class="data" id="exceptionHolder">
+                <h5 style="margin-bottom: 10vmin;">
+                    Hány óránként lehessen használni, hány óránként fogad?<br>
+                    (Pl. Ha a fodrász egy óránként fogad embert, azt írd a mezőbe, hogy "1")
+                </h5>
+                <input type="text" name="" id="steps" placeholder="Pl.: 1">
+                <h5 style="margin-top: 5vmin;margin-bottom: 5vmin;">
+                    Van olyan időpont, amikor nem lehet használni, nem tud fogadni?<br>Ha igen jelöld be a négyzetet!
+                </h5>
+                <input type="checkbox" name="" id="exceptions">
+            </div>
+            <button type="submit" class="submit" onclick="submit()">Beadás</button>
+        </div>
+    </div>
+    <script src="../scripts/timetable/app.js"></script>
+</body>
+</html>

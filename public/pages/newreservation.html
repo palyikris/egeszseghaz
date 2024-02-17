@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesterzsébet Egészségház</title>
+    <!--------------------------------------------------->
+    <link rel="stylesheet" href="../styles/newreservation/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../public/logo.png">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+<body>
+    <div class="topnavOpener">
+        <i class="fa fa-navicon"></i>
+      </div>
+      <div class="topnav">
+        <div class="options">
+          <button onclick="toFirstPage()" id="topnavOption">
+            <p>Főoldal</p>
+            <span id="topnavSpan"></span>
+          </button>
+          <button id="topnavOption1" onclick="toSecondPage()">
+            <p>Rólunk</p>
+            <span id="topnavSpan1"></span>
+          </button>
+          <button id="topnavOption2" onclick="toThirdPage()">
+            <p>Szolgáltatásaink</p>
+            <span id="topnavSpan2"></span>
+          </button>
+          <button id="topnavOption3" onclick="toFourthPage()">
+            <p>Foglalás</p>
+            <span id="topnavSpan3"></span>
+          </button>
+          <button id="topnavOption4" onclick="toFifthPage()">
+            <p>Admin</p>
+            <span id="topnavSpan4"></span>
+          </button>
+        </div>
+      </div>
+    <div class="modalContainer">
+        <div class="modal">
+            <div class="title">
+                <h2>Foglalj időpontot online!</h2>
+            </div>
+            <div class="form">
+                <div class="title">
+                    <h3>Töltsd ki a mezőket!</h3>
+                </div>
+                <div class="lds-hourglass">
+                </div>
+                <select name="" id="typeOf" onchange="getOption(this.value)" title="Kérem töltse ki ezt a mezőt">
+                    
+                </select>
+                <!-- <div class="data">
+                    <label for="">Vezetéknév</label>
+                    <input type="text" id="lname" placeholder="Ide írd a vezetékneved..." required>
+                </div>
+                <div class="data">
+                    <label for="">Keresznév</label>
+                    <input type="text" id="fname" placeholder="Ide írd a kereszneved" required>
+                </div>
+                <div class="data">
+                    <label for="">Dátum</label>
+                    <input id="date" type="date" required>
+                </div>
+                <div class="data">
+                    <label for="">Idő</label>
+                    <input id="time" type="time" required placeholder="óó/pp" step="1800">
+                </div>
+                <div class="data">
+                    <label for="">Email</label>
+                    <input id="email" type="email" required placeholder="Ide írd az emailed...">
+                </div> -->
+                <h3 style="font-weight: 300">Az online időpont foglalás jelenleg nem elérhető, az alábbi telefonszámon tud foglalni: </h3>
+                <h4 id="phone">Válasszon szolgáltatást</h4>
+                <!-- <div class="buttonContainer">
+                    <button type="button" onclick="reserve()">Foglalok</button>
+                </div> -->
+            </div>
+        </div>
+        <div class="displayChosen">
+            <div class="photo" id="photo">
+
+            </div>
+            <div class="descContainer">
+                <div class="desc">
+                    <p id="name">Válasszon szolgáltatást!</p>
+                </div>
+                <div class="desc">
+                    <p id="desc">Válasszon szolgáltatást!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="../scripts/newreservation/app.js">
+
+    </script>
+</body>
+</html>

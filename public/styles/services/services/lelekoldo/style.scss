@@ -1,0 +1,21 @@
+@import "../../serviceUnifrom/style";
+@import "../aerobic/style";
+@import "../../style";
+@import "../../../uniform/uniform";
+
+.serviceData {
+  @include centerDiv(column, nowrap);
+  align-items: flex-start;
+  padding: 5vmin 3vmin;
+
+  h3 {
+    color: #d8c2ad;
+    margin-bottom: 4vmin;
+    font-weight: bold;
+  }
+
+  p {
+    padding-left: 3vmin;
+    font-style: italic;
+  }
+}

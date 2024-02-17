@@ -1,0 +1,60 @@
+@import "../uniform/uniform";
+
+
+.mainContainer{
+    @include centerDiv(column, nowrap);
+    padding-top: 10vmin;
+    img{
+        width: auto;
+        max-width: 80%;
+    }
+    .text{
+        @include centerDiv(column, nowrap);
+        padding: 0 5vmin;
+        h1{
+            margin-bottom: 6vmin;
+            font-size: 4vh ;
+            text-align: center;
+        }
+        p{
+            font-size: 2.5vh;
+            width: 50%;
+            text-align: center;
+        }
+    }
+    .link{
+        @include centerDiv(column, nowrap);
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 10vmin 5vmin 3vmin 5vmin;
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 3vmin 5vmin;
+            background-color: #d8c2ad;
+            border-radius: 6px;
+            color: black;
+        }
+    }
+}
+@media only screen and (max-width: 700px){
+    .mainContainer{
+        img{
+            max-width: 95%;
+        }
+        .text{
+            h1{
+                font-size: 3vh;
+                margin-bottom: 15vmin;            
+            }
+            p{
+                font-size: 2vh;
+                width: 90%;
+            }
+        }
+        .link{
+            margin-top: 10vmin;
+        }
+    }
+}

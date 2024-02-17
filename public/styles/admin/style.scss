@@ -1,0 +1,211 @@
+@import "../uniform/uniform";
+
+
+
+
+.container{
+    @include centerDiv(column, nowrap);
+    height: 100vh;
+    h2{
+        color: #8e715b;
+        margin-bottom: 3vmin;
+    }
+    .lds-hourglass {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-hourglass:after {
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 8px;
+        box-sizing: border-box;
+        border: 32px solid #8e715b;
+        border-color: #8e715b transparent #8e715b transparent;
+        animation: lds-hourglass 1.2s infinite;
+      }
+      @keyframes lds-hourglass {
+        0% {
+          transform: rotate(0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+          transform: rotate(900deg);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+          transform: rotate(1800deg);
+        }
+      }
+      
+}
+
+
+.mainContent{
+    @include centerDiv(column, nowrap);
+    display: none;
+    .title{
+        @include centerDiv(row, nowrap);
+        padding: 10vmin 0;
+    }
+    .settings{
+        @include centerDiv(row, nowrap);
+        justify-content: flex-end;
+        padding: 3vmin 10vmin 3vmin 0;
+        margin-bottom: 10vmin;
+        a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .titleLeft{
+        @include centerDiv(row, nowrap);
+        justify-content: flex-start;
+        padding-left: 10vmin;
+        margin: 10vmin 0;
+        a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .reserves{
+        @include centerDiv(row, wrap);
+        .reserve{
+            background: url("../../public/fodrasz.jpg");
+            @include centerDiv(row, nowrap);
+            align-items: flex-end;
+            width: 50vmin;
+            height: 70vmin;
+            @include bgPic();
+            margin: 5vmin 5vmin;
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.4);
+            .data{
+                background-color: #d8c2ad;
+                padding: 5vmin 2vmin;
+                @include centerDiv(column, nowrap);
+                border-radius: 0 0 10px 10px;
+                .name{
+                    padding-bottom: 3vmin;
+                    border-bottom: 1px solid #8e715b;
+                }
+                .type{
+                    margin-top:  3vmin;
+                }
+                div{
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .reservationPanel{
+        @include centerDiv(row, wrap);
+        max-width: 90%;
+        background-color: #d8c2ad;
+        justify-content: space-evenly;
+        padding: 15vmin 10vmin;
+        margin: 10vmin 0;
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.4);
+        border-radius: 5px;
+        .panel{
+            @include centerDiv(column, nowrap);
+            @include bgPic();
+            border-radius: 10%;
+            width: 30vmin;
+            height: 30vmin;
+            border-radius: 10px;
+            background-color: #8e715b;
+            margin: 3vmin; 
+            .del{
+                margin-top:  3vmin;
+                border: 1px solid black;
+                border-radius: 100%;
+                padding: 1.5vmin 2vmin;
+                font-size: 3vh;
+                transition: all 0.6s;
+                &:hover{
+                    background-color: black;
+                    color: #8e715b;
+                    cursor: pointer;
+                }
+            }
+        }
+        .addNewType{
+            background-color: #8e715b;
+            font-weight: bold;
+            font-size: 3vh;
+            border-radius: 5px;
+            padding: 3vmin 8vmin;
+            margin-top: 5vmin;
+            border: none;
+            outline: none;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .newTypeAdder{
+        @include centerDiv(column, nowrap);
+        background-color: #d8c2ad;
+        border-radius: 5px;
+        padding: 10vmin;
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.4);
+        margin: 10vmin 0;
+        width: auto;
+        max-width: 90%;
+        .data{
+            @include centerDiv(row, wrap);
+            padding: 4vmin 0;
+            label{
+                font-size: 2.5vh;
+            }
+            input{
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                padding: 2vmin 1vmin;
+                margin-left: 3vmin;
+            }
+        }
+        button{
+            border: none;
+            background-color:#8e715b;
+            padding: 3vmin 8vmin;
+            border-radius: 8px;
+            outline: none;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .mainContent{
+        .reserves{
+            .reserve{
+                .data{
+                    div{
+                        p{
+                            font-size: 2vh;
+                        }
+                    }
+                }
+            }
+        }
+        .reservationPanel{
+            flex-direction: column;
+        }
+    }
+}

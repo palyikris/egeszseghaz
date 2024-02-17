@@ -1,0 +1,435 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f1f1;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+.container h2 {
+  color: #8e715b;
+  margin-bottom: 3vmin;
+}
+.container .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.container .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #8e715b;
+  border-color: #8e715b transparent #8e715b transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite;
+}
+@-webkit-keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.mainContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  display: none;
+  padding-bottom: 10vmin;
+}
+.mainContent .titleLeft {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-left: 10vmin;
+  margin: 10vmin 0;
+}
+.mainContent .titleLeft a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+.mainContent .adjustBgPic {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .adjustBgPic .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 20vmin;
+}
+.mainContent .adjustBgPic .title h1 {
+  font-size: 6vh;
+  text-align: center;
+}
+.mainContent .adjustBgPic .currentPics {
+  margin-top: 20vmin;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 5vmin 3vmin;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  max-width: 90%;
+}
+.mainContent .adjustBgPic .currentPics .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  margin: 5vmin 0;
+  height: auto;
+}
+.mainContent .adjustBgPic .currentPics .container .currentPic {
+  margin-bottom: 3vmin;
+}
+.mainContent .adjustBgPic .help {
+  margin: 10vmin 0 0 0;
+  padding: 5vmin;
+  border: 3px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  max-width: 60%;
+}
+.mainContent .adjustBgPic .help h3 {
+  margin: 3vmin 0 5vmin 0;
+  text-align: center;
+  font-size: 5vh;
+}
+.mainContent .adjustBgPic .help p {
+  text-align: center;
+}
+.mainContent .adjustBgPic .changePics {
+  margin: 20vmin 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 5vmin;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  max-width: 90%;
+}
+.mainContent .adjustBgPic .changePics .adjuster {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 3vmin;
+}
+.mainContent .adjustBgPic .changePics .adjuster input {
+  margin-left: 5vmin;
+}
+.mainContent .adjustBgPic .changePics .adjuster label {
+  font-size: 2vh;
+  text-align: center;
+}
+.mainContent .adjustTexts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .adjustTexts .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 20vmin;
+}
+.mainContent .adjustTexts .title h1 {
+  font-size: 6vh;
+  text-align: center;
+}
+.mainContent .adjustTexts .currentTexts {
+  margin-top: 20vmin;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 5vmin 3vmin;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  max-width: 60%;
+  max-height: 20%;
+}
+.mainContent .adjustTexts .currentTexts .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: auto;
+  max-width: 25%;
+  margin-top: 5vmin;
+  height: auto;
+  padding: 5vmin 0;
+}
+.mainContent .adjustTexts .currentTexts .container .currentName {
+  margin-bottom: 1vmin;
+}
+.mainContent .adjustTexts .currentTexts .container .currentName, .mainContent .adjustTexts .currentTexts .container .currentText {
+  text-align: center;
+}
+.mainContent .adjustTexts .changeTexts {
+  margin: 20vmin 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 5vmin;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  max-width: 90%;
+}
+.mainContent .adjustTexts .changeTexts .adjuster {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 3vmin;
+}
+.mainContent .adjustTexts .changeTexts .adjuster div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 1vmin 0;
+}
+.mainContent .adjustTexts .changeTexts .adjuster div input {
+  margin-left: 5vmin;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 1vmin 2vmin;
+}
+.mainContent .adjustTexts .changeTexts .adjuster div label {
+  text-align: center;
+}
+.mainContent .adjustTexts .changeTexts .buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.mainContent .adjustTexts .changeTexts .buttonContainer button {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5vmin 5vmin;
+  background-color: #8e715b;
+  outline: none;
+}
+.mainContent .adjustTexts .changeTexts .buttonContainer button:hover {
+  cursor: pointer;
+}
+.mainContent .adjustPhone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.mainContent .adjustPhone .currentPhones {
+  margin: 20vmin 0 8vmin 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 5vmin;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  max-width: 90%;
+}
+.mainContent .adjustPhone .currentPhones .container {
+  height: auto;
+  padding: 8vmin 0;
+  max-width: 50vmin;
+}
+.mainContent .adjustPhone .changePhones {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: auto;
+  background-color: #d8c2ad;
+  border-radius: 10px;
+  padding: 5vmin;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  max-width: 90%;
+}
+.mainContent .adjustPhone .changePhones .adjuster {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  max-width: 90%;
+  padding: 10vmin 5vmin;
+}
+.mainContent .adjustPhone .changePhones input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 1vmin 2vmin;
+  margin-top: 1vmin;
+  margin-left: 1vmin;
+}
+.mainContent .adjustPhone .changePhones label {
+  text-align: center;
+}
+.mainContent .adjustPhone .changePhones .buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.mainContent .adjustPhone .changePhones .buttonContainer button {
+  border: none;
+  border-radius: 8px;
+  padding: 2vmin 8vmin;
+  background-color: #8e715b;
+  outline: none;
+}
+.mainContent .adjustPhone .changePhones .buttonContainer button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .mainContent .adjustTexts .currentTexts {
+    flex-direction: column;
+  }
+  .mainContent .adjustTexts .currentTexts .container {
+    max-width: 90%;
+    margin: 5vmin 0;
+    max-height: 50vmin;
+  }
+  .mainContent .adjustBgPic .currentPics {
+    flex-direction: column;
+  }
+  .mainContent .adjustBgPic .currentPics .container {
+    max-height: 50vmin;
+  }
+  .mainContent .adjustTexts .changeTexts .adjuster div label {
+    text-align: center;
+    margin-bottom: 1.5vmin;
+  }
+  .mainContent .adjustTexts .changeTexts .buttonContainer button {
+    padding: 3vmin 10vmin;
+  }
+  .mainContent .adjustTexts .changeTexts .adjuster div {
+    flex-direction: column;
+    margin: 3vmin 0;
+  }
+  .mainContent .adjustTexts .changeTexts .adjuster {
+    margin: 8vmin 0;
+  }
+}/*# sourceMappingURL=style.css.map */
