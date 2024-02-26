@@ -619,18 +619,18 @@ body {
     margin-top: 20vmin;
   }
   .mainContent footer .text,
-.mainContent footer .triangle {
+  .mainContent footer .triangle {
     margin: 0;
     padding: 0;
     width: 100%;
   }
   .mainContent footer .text *,
-.mainContent footer .triangle * {
+  .mainContent footer .triangle * {
     width: 100%;
     text-align: center;
   }
   .mainContent footer .text .separator,
-.mainContent footer .triangle .separator {
+  .mainContent footer .triangle .separator {
     width: 40%;
   }
   .mainContent footer .triangle {

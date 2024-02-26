@@ -35,9 +35,6 @@ body .searchContainer input {
 body .searchContainer input::-moz-placeholder {
   text-transform: none;
 }
-body .searchContainer input:-ms-input-placeholder {
-  text-transform: none;
-}
 body .searchContainer input::placeholder {
   text-transform: none;
 }
@@ -187,34 +184,16 @@ body .topnav .options {
   box-sizing: border-box;
   border: 32px solid #8e715b;
   border-color: #8e715b transparent #8e715b transparent;
-  -webkit-animation: lds-hourglass 1.2s infinite;
-          animation: lds-hourglass 1.2s infinite;
-}
-@-webkit-keyframes lds-hourglass {
-  0% {
-    transform: rotate(0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-  50% {
-    transform: rotate(900deg);
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  100% {
-    transform: rotate(1800deg);
-  }
+  animation: lds-hourglass 1.2s infinite;
 }
 @keyframes lds-hourglass {
   0% {
     transform: rotate(0);
-    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
   50% {
     transform: rotate(900deg);
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   100% {
     transform: rotate(1800deg);
@@ -315,7 +294,7 @@ body .topnav .options {
     display: none;
   }
   body .topnav,
-body .topnavOpener {
+  body .topnavOpener {
     background-color: transparent;
   }
   .mainContainer h3 {

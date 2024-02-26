@@ -1,6 +1,6 @@
 console.log("Starting");
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", event => {
   const app = firebase.app();
   let db = firebase.firestore();
 
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     } else {
       document.getElementById("search").value = selected;
       console.log(document.querySelectorAll(".searches"));
-      document.querySelectorAll(".searches").forEach((searchItem) => {
+      document.querySelectorAll(".searches").forEach(searchItem => {
         console.log(searchItem);
         if (
           searchItem.id.toLowerCase().includes(selected.toLowerCase()) === true
@@ -40,6 +40,7 @@ function removeAllChildNodes(parent) {
     parent.removeChild(parent.firstChild);
   }
 }
+
 function checkDisplayedChildNodes(parent) {
   let childNodes = 0;
   for (let i = 0; i < parent.children.length; i++) {
@@ -52,7 +53,7 @@ function checkDisplayedChildNodes(parent) {
 
 document.querySelector("#search").addEventListener("input", () => {
   if (document.querySelectorAll(".searches").length != 0) {
-    document.querySelectorAll(".searchBlocks .searches").forEach((search) => {
+    document.querySelectorAll(".searchBlocks .searches").forEach(search => {
       search.style.display = "none";
     });
 
@@ -60,7 +61,7 @@ document.querySelector("#search").addEventListener("input", () => {
 
     let searches = document.querySelectorAll(".searchBlocks .searches");
 
-    searches.forEach((search) => {
+    searches.forEach(search => {
       if (search.id.includes(value.toLowerCase())) {
         search.style.display = "inline-block";
       }
@@ -79,7 +80,7 @@ let selected = url.searchParams.get("selected");
 function selectSearch() {
   if (document.querySelector("#search").value != "") {
     console.log("bum");
-    document.querySelectorAll(".searchBlocks .searches").forEach((search) => {
+    document.querySelectorAll(".searchBlocks .searches").forEach(search => {
       console.log(search);
       if (
         search.id.toLowerCase() ===
@@ -137,6 +138,8 @@ topnavOption4.addEventListener("mouseout", () => {
 
 // ! ------------------------------------------------------------
 
+let navicon = document.querySelector(".topnavOpener button");
+console.log(navicon, "navicon");
 navicon.addEventListener("click", () => {
   if (document.querySelector(".topnav").style.display == "none") {
     document.querySelector(".topnav").style.display = "flex";
@@ -178,22 +181,21 @@ function loadSearchItems() {
 
   console.error("nah");
 
-  db.collection("newreservation")
-    .get()
-    .then((docs) => {
-      docs.forEach((doc) => {
-        let search = document.createElement("div");
-        search.setAttribute("id", doc.id);
-        search.setAttribute("class", "searches");
-        search.setAttribute("onclick", "loadService(this.id)");
-        search.innerHTML = doc.id;
+  db.collection("newreservation").get().then(docs => {
+    docs.forEach(doc => {
+      let search = document.createElement("div");
+      search.setAttribute("id", doc.id);
+      search.setAttribute("class", "searches");
+      search.setAttribute("onclick", "loadService(this.id)");
+      search.innerHTML = doc.id;
 
-        document.querySelector(".searchBlocks").appendChild(search);
-      });
-
-      document.querySelector(".container").style.display = "none";
-      document.querySelectorAll(".searches").forEach((search) => {
-        search.style.display = "inline-block";
-      });
+      document.querySelector(".searchBlocks").appendChild(search);
     });
+
+    document.querySelector(".container").style.display = "none";
+    document.querySelectorAll(".searches").forEach(search => {
+      search.style.display = "inline-block";
+    });
+  });
 }
+console.log("Ending");
